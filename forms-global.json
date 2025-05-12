@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>일반 서식(계약/법률/여권/생활) - 아워폼</title>
+  <title>외국인(foreigner) 전용서식 - 아워폼</title>
   <style>
     body { font-family: sans-serif; text-align: center; padding: 30px; }
     .form-item { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; background: #eee; border: none; border-radius: 5px; }
@@ -10,14 +10,14 @@
 </head>
 <body>
 
-  <h1>일반 서식(계약/법률/여권/생활)</h1>
+  <h1>외국인(foreigner) 전용서식</h1>
   <p>필요한 서식을 선택하세요</p>
 
   <div id="form-list">
     <!-- 여기에 JS로 버튼 생성됨 -->
   </div>
 
-  <p><a href="public.html">← 일반 서식(계약/법률/여권/생활)로 돌아가기</a></p>
+  <p><a href="public.html">← 외국인(foreigner) 전용서식로 돌아가기</a></p>
 
   <script>
     fetch('forms-public.json')
