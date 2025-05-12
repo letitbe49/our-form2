@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인 - 아워폼</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    .login-btn { margin: 15px; padding: 15px 30px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; width: 250px; }
+    .google { background-color: #4285F4; color: white; }
+    .naver { background-color: #03C75A; color: white; }
+  </style>
+</head>
+<body>
+
+  <h1>다운로드를 위해 로그인하세요</h1>
+  <p>한 번의 로그인으로 모든 서식을 자유롭게 이용할 수 있습니다.</p>
+
+  <div>
+    <button class="login-btn google" onclick="fakeLogin()">Google 로그인</button><br>
+    <button class="login-btn naver" onclick="fakeLogin()">Naver 로그인</button>
+  </div>
+
+  <script>
+    function fakeLogin() {
+      alert("로그인 되었다고 가정하고 다운로드 페이지로 이동합니다.");
+      window.location.href = "download.html";
+    }
+  </script>
+
+</body>
+</html>
