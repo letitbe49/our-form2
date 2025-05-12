@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>서식 상세보기 - 아워폼</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 30px; }
+    .preview-img { max-width: 300px; margin: 20px auto; display: block; }
+    .download-btn { margin: 10px; padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1 id="form-title">서식명</h1>
+  <p id="form-desc">간단한 설명이 여기에 나옵니다.</p>
+
+  <img id="form-image" class="preview-img" src="" alt="서식 미리보기">
+
+  <div>
+    <button class="download-btn" onclick="goLogin()">PDF 다운로드</button>
+    <button class="download-btn" onclick="goLogin()">HWP 다운로드</button>
+    <button class="download-btn" onclick="goLogin()">DOC 다운로드</button>
+    <button class="download-btn" onclick="goLogin()">XLS 다운로드</button>
+  </div>
+
+  <p><a href="javascript:history.back()">← 뒤로 가기</a></p>
+
+  <script>
+    // URL에서 form=값 가져오기
+    const params = new URLSearchParams(window.location.search);
+    const formName = params.get("form");
+
+    // 서식 정보 예시 (원하면 여기 계속 추가 가능)
+    const formData = {
+      "주민등록등본": {
+        title: "주민등록등본 신청서",
+        desc: "주민등록등본 발급용 서식입니다. 주민센터에서 사용 가능.",
+        image: "https://via.placeholder.com/300x400.png?text=주민등록등본+미리보기"
+      },
+      "건강보험자격": {
+        title: "건강보험 자격득실 확인서",
+        desc: "건강보험 자격을 확인하는 데 필요한 서식입니다.",
+        image: "https://via.placeholder.com/300x400.png?text=건강보험+미리보기"
+      }
+    };
+
+    if (formData[formName]) {
+      document.getElementById("form-title").innerText = formData[formName].title;
+      document.getElementById("form-desc").innerText = formData[formName].desc;
+      document.getElementById("form-image").src = formData[formName].image;
+    } else {
+      document.getElementById("form-title").innerText = "서식 정보를 찾을 수 없습니다.";
+    }
+
+    function goLogin() {
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
