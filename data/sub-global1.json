@@ -1,0 +1,218 @@
+[
+  {
+    "code": "8-1",
+    "title": "영문이력서",
+    "category": "공통",
+    "description": "English resume",
+    "pdf": "8-1.영문이력서.pdf",
+    "hwp": "nan",
+    "doc": "8-1.영문이력서.doc.docx"
+  },
+  {
+    "code": "8-2",
+    "title": "외국인전용_계약서 표준 근로계약서(일반)",
+    "category": "공통",
+    "description": "Standard employment contract",
+    "pdf": "8-2.외국인전용_계약서 표준 근로계약서(일반).hwp.pdf",
+    "hwp": "8-2.외국인전용_계약서 표준 근로계약서(일반).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-3",
+    "title": "외국인전용_계약서 표준 근로계약서(농업,축산업,어업)",
+    "category": "공통",
+    "description": "Standard employment contract(Agriculture, livestock farming, fishing)",
+    "pdf": "8-3.외국인전용_계약서 표준 근로계약서(농업,축산업,어업).hwp.pdf",
+    "hwp": "8-3.외국인전용_계약서 표준 근로계약서(농업,축산업,어업).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-4",
+    "title": "입국신고서(출입국관리법 시행규칙)",
+    "category": "공통",
+    "description": "Entry report",
+    "pdf": "8-4.입국신고서(출입국관리법 시행규칙).hwp.pdf",
+    "hwp": "8-4.입국신고서(출입국관리법 시행규칙).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-5",
+    "title": "출국신고서 (외국인용)",
+    "category": "공통",
+    "description": "Departure Declaration Form",
+    "pdf": "8-5.출국신고서 (외국인용).hwp.pdf",
+    "hwp": "8-5.출국신고서 (외국인용).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-6",
+    "title": "출입국신고서(국민용)(출입국관리법 시행규칙)",
+    "category": "공통",
+    "description": "Immigration Declaration Form (for citizens)",
+    "pdf": "8-6.출입국신고서(국민용)(출입국관리법 시행규칙).hwp.pdf",
+    "hwp": "8-6.출입국신고서(국민용)(출입국관리법 시행규칙).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-7",
+    "title": "통합신청서(외국인등록)1",
+    "category": "공통",
+    "description": "Integrated Application Form (Foreigner Registration)",
+    "pdf": "8-7.통합신청서(외국인등록)1.hwp.pdf",
+    "hwp": "8-7.통합신청서(외국인등록)1.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-8",
+    "title": "체류지 변경신고서(출입국관리법 시행규칙)1",
+    "category": "공통",
+    "description": "Change of Residence Notification Form",
+    "pdf": "8-10.체류지 변경신고서(출입국관리법 시행규칙)1.hwp.pdf",
+    "hwp": "8-10.체류지 변경신고서(출입국관리법 시행규칙)1.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-9",
+    "title": "체류자격외활동허가신청서(통합신청서)",
+    "category": "공통",
+    "description": "Application for permission to engage in activities outside of the scope of residence",
+    "pdf": "8-15.체류자격외활동허가신청서(통합신청서).hwp.pdf",
+    "hwp": "8-15.체류자격외활동허가신청서(통합신청서).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-10",
+    "title": "출입국에 관한 사실증명 CERTIFICATE OF ENTRY & DEPARTURE",
+    "category": "공통",
+    "description": "CERTIFICATE OF ENTRY & DEPARTURE",
+    "pdf": "8-16.출입국에 관한 사실증명 CERTIFICATE OF ENTRY & DEPARTURE.hwp.pdf",
+    "hwp": "8-16.출입국에 관한 사실증명 CERTIFICATE OF ENTRY & DEPARTURE.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-11",
+    "title": "사실증명 발급ㆍ열람 신청서 APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT",
+    "category": "공통",
+    "description": "APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT",
+    "pdf": "8-17.사실증명 발급ㆍ열람 신청서 APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT.hwp.pdf",
+    "hwp": "8-17.사실증명 발급ㆍ열람 신청서 APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-12",
+    "title": "출국기한유예신청서(출입국관리법 시행규칙)",
+    "category": "공통",
+    "description": "Application for deferment of departure deadline",
+    "pdf": "8-18.출국기한유예신청서(출입국관리법 시행규칙).hwp.pdf",
+    "hwp": "8-18.출국기한유예신청서(출입국관리법 시행규칙).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-13",
+    "title": "개인정보 수집·이용에 대한 동의서",
+    "category": "공통",
+    "description": "Consent to collection and use of personal information",
+    "pdf": "8-19.개인정보 수집·이용에 대한 동의서.hwp.pdf",
+    "hwp": "8-19.개인정보 수집·이용에 대한 동의서.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-14",
+    "title": "개인정보 조회 동의서",
+    "category": "공통",
+    "description": "Personal information inquiry consent form",
+    "pdf": "8-20.개인정보 조회 동의서.hwp.pdf",
+    "hwp": "8-20.개인정보 조회 동의서.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-15",
+    "title": "외국인체류확인서 열람 또는 교부 신청서",
+    "category": "공통",
+    "description": "Application for viewing or issuance of foreigner residence confirmation certificate",
+    "pdf": "8-21.외국인체류확인서 열람 또는 교부 신청서.hwp.pdf",
+    "hwp": "8-21.외국인체류확인서 열람 또는 교부 신청서.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-16",
+    "title": "자기소개서",
+    "category": "공통",
+    "description": "self-introduction",
+    "pdf": "8-22.자기소개서.hwp.pdf",
+    "hwp": "8-22.자기소개서.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-17",
+    "title": "응시원서",
+    "category": "공통",
+    "description": "application form",
+    "pdf": "8-23.응시원서.hwp.pdf",
+    "hwp": "8-23.응시원서.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-18",
+    "title": "외국인_건강보험_가입제외_신청서",
+    "category": "공통",
+    "description": "Foreigner_Health_Insurance_Exclusion_Application_Form",
+    "pdf": "8-24.외국인_건강보험_가입제외_신청서.pdf",
+    "hwp": "nan",
+    "doc": "8-24.외국인_건강보험_가입제외_신청서.doc.docx"
+  },
+  {
+    "code": "8-19",
+    "title": "신원진술서(KOR)",
+    "category": "공통",
+    "description": "Identity Statement (KOR)",
+    "pdf": "8-25.신원진술서(KOR).pdf.pdf",
+    "hwp": "nan",
+    "doc": "nan"
+  },
+  {
+    "code": "8-20",
+    "title": "신원진술서(ENG)",
+    "category": "공통",
+    "description": "Identity Statement (ENG)",
+    "pdf": "8-26.신원진술서(ENG).pdf.pdf",
+    "hwp": "nan",
+    "doc": "nan"
+  },
+  {
+    "code": "8-21",
+    "title": "외국인 대상자 제출 서류 안내",
+    "category": "공통",
+    "description": "Documents to be submitted by foreign nationals",
+    "pdf": "8-27.외국인 대상자 제출 서류 안내.hwp.pdf",
+    "hwp": "8-27.외국인 대상자 제출 서류 안내.hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-22",
+    "title": "분실물 신고서(영문)",
+    "category": "공통",
+    "description": "Lost and Found Report (English)",
+    "pdf": "8-28.분실물 신고서(영문).hwp.pdf",
+    "hwp": "8-28.분실물 신고서(영문).hwp.hwp",
+    "doc": "nan"
+  },
+  {
+    "code": "8-23",
+    "title": "외국인근로자_장기요양보험_가입제외_신청서(ENG)",
+    "category": "공통",
+    "description": "Foreign Workers_Long-term Care Insurance_Exclusion_Application Form (ENG)",
+    "pdf": "8-29.외국인근로자_장기요양보험_가입제외_신청서(ENG).pdf",
+    "hwp": "8-29.외국인근로자_장기요양보험_가입제외_신청서(ENG).hwp.hwp",
+    "doc": "8-29.외국인근로자_장기요양보험_가입제외_신청서(ENG).doc.docx"
+  },
+  {
+    "code": "8-24",
+    "title": "재외국민_및_외국인_건강보험_가입제외_신청서",
+    "category": "공통",
+    "description": "Application for Exclusion from Health Insurance for Overseas Koreans and Foreigners",
+    "pdf": "8-30.재외국민_및_외국인_건강보험_가입제외_신청서.hwp.pdf",
+    "hwp": "8-30.재외국민_및_외국인_건강보험_가입제외_신청서.hwp.hwp",
+    "doc": "8-30.재외국민_및_외국인_건강보험_가입제외_신청서.doc.docx"
+  }
+]
