@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>아워폼 - 문서 미리보기</title>
+    <style>
+        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
+        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        .title { font-weight: bold; }
+        .desc { color: #555; margin-bottom: 10px; }
+        .link { color: #0066cc; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h2>문서 미리보기</h2>
+    <div id="container"></div>
+
+    <script>
+        fetch("sub-auto9.json")
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById("container");
+                data.forEach(item => {
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.innerHTML = `
+                        <div class="title">${item.code} - ${item.title}</div>
+                        <div class="desc">설명: ${item.description}</div>
+                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
+                    `;
+                    container.appendChild(card);
+                });
+            });
+    </script>
+</body>
+</html>
