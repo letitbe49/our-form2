@@ -1,44 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>일반 양식 목록 - 아워폼</title>
-  <style>
-    body { font-family: sans-serif; text-align: center; padding: 30px; }
-    .form-item { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; background: #eee; border: none; border-radius: 5px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>일반 양식 서식 리스트</title>
+    <style>
+        body { font-family: sans-serif; padding: 30px; text-align: center; }
+        .form-item { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; background: #eee; border: none; border-radius: 5px; }
+    </style>
 </head>
 <body>
+    <h1>일반 양식 서식 목록</h1>
+    <p>필요한 서식을 선택하세요</p>
 
-  <h1>일반 양식 목록</h1>
-  <p>필요한 서식을 선택하세요</p>
+    <div id="form-list"></div>
+    <p><a href="personal.html">← 카테고리로 돌아가기</a></p>
 
-  <div id="form-list">
-    <!-- 여기에 JS로 버튼 생성됨 -->
-  </div>
-
-  <p><a href="personal.html">← 일반 양식 카테고리로 돌아가기</a></p>
-
-  <script>
-    fetch('forms-personal.json')
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById('form-list');
-        data.forEach(item => {
-          const btn = document.createElement('button');
-          btn.className = 'form-item';
-          btn.innerText = item.name;
-          btn.onclick = () => {
-            location.href = `form-detail.html?form=${encodeURIComponent(item.id)}`;
-          };
-          container.appendChild(btn);
-        });
-      })
-      .catch(err => {
-        document.getElementById('form-list').innerText = '서식 목록을 불러오는 데 실패했습니다.';
-        console.error(err);
-      });
-  </script>
-
+    <script>
+        fetch("forms-personal.json")
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById("form-list");
+                data.forEach(item => {
+                    const btn = document.createElement("button");
+                    btn.className = "form-item";
+                    btn.innerText = item.name;
+                    btn.onclick = () => {
+                        location.href = item.href;
+                    };
+                    container.appendChild(btn);
+                });
+            })
+            .catch(err => {
+                document.getElementById("form-list").innerText = "서식 목록을 불러오는 데 실패했습니다.";
+            });
+    </script>
 </body>
 </html>
