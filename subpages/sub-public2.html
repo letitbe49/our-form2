@@ -17,27 +17,28 @@
   <div id="form-list">불러오는 중...</div>
 
   <script>
-    const jsonFile = "https://letitbe49.github.io/our-form2/data/sub-public2.json";
-    fetch(jsonFile)
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById("form-list");
-        container.innerHTML = "";
-        data.forEach(item => {
-          const div = document.createElement("div");
-          div.className = "form-item";
-          div.innerHTML = `
-            <strong>${item.code}</strong> - ${item.title}<br>
-            설명: ${item.description}<br>
-            <a href="${item.pdf}" target="_blank">📄 PDF 보기</a>
-          `;
-          container.appendChild(div);
-        });
-      })
-      .catch(error => {
-        document.getElementById("form-list").innerText = "데이터를 불러올 수 없습니다.";
-        console.error("JSON 로딩 실패:", error);
+  const jsonFile = "https://letitbe49.github.io/our-form2/data/sub-public2.json";
+
+  fetch(jsonFile)
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById("form-list");
+      container.innerHTML = "";
+      data.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "form-item";
+        div.innerHTML = `
+          <strong>${item.code}</strong> - ${item.title}<br>
+          설명: ${item.description}<br>
+          <a href="${item.pdf}" target="_blank">📄 PDF 보기</a>
+        `;
+        container.appendChild(div);
       });
+    })
+    .catch(error => {
+      document.getElementById("form-list").innerText = "데이터를 불러올 수 없습니다.";
+      console.error("JSON 로딩 실패:", error);
+    });
   </script>
 </body>
 </html>
