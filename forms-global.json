@@ -1,46 +1,57 @@
 [
     {
         "name": "공통",
-        "id": "공통"
+        "id": "공통",
+        "href": "sub-global1.html"
     },
     {
         "name": "영어(English)",
-        "id": "영어(English)"
+        "id": "영어(English)",
+        "href": "sub-global4.html"
     },
     {
         "name": "(일본어)日本語",
-        "id": "(일본어)日本語"
+        "id": "(일본어)日本語",
+        "href": "sub-global5.html"
     },
     {
         "name": "중국어(中国人)",
-        "id": "중국어(中国人)"
+        "id": "중국어(中国人)",
+        "href": "sub-global6.html"
     },
     {
         "name": "러시아어(русский)",
-        "id": "러시아어(русский)"
+        "id": "러시아어(русский)",
+        "href": "sub-global7.html"
     },
     {
         "name": "몽골어(Монгол)",
-        "id": "몽골어(Монгол)"
+        "id": "몽골어(Монгол)",
+        "href": "sub-global8.html"
     },
     {
         "name": "베트남어(Tiếng Việt)",
-        "id": "베트남어(TiếngViệt)"
+        "id": "베트남어(TiếngViệt)",
+        "href": "sub-global9.html"
     },
     {
         "name": "우즈벡어(o'zbek)",
-        "id": "우즈벡어(o'zbek)"
+        "id": "우즈벡어(o'zbek)",
+        "href": "sub-global10.html"
     },
     {
         "name": "태국어(แบบไทย)",
-        "id": "태국어(แบบไทย)"
+        "id": "태국어(แบบไทย)",
+        "href": "sub-global11.html"
     },
-   {
+    {
         "name": "크메르어(ខ្មែរ)",
-        "id": "크메르어(ខ្មែរ)"
+        "id": "크메르어(ខ្មែរ)",
+        "href": "sub-global2.html"
     },
     {
         "name": "타갈로그어(Tagalog)",
-        "id": "타갈로그어(Tagalog)"
+        "id": "타갈로그어(Tagalog)",
+        "href": "sub-global3.html"
     }
 ]
