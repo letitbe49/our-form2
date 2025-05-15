@@ -16,21 +16,21 @@
     <div id="container"></div>
 
     <script>
-        fetch("sub-auto20.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
+    fetch("../data/sub-public2.json")
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("container");
+            data.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "card";
+                card.innerHTML = `
+                    <div class="title">${item.code} - ${item.title}</div>
+                    <div class="desc">설명: ${item.description}</div>
+                    <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
+                `;
+                container.appendChild(card);
             });
+        });
     </script>
 </body>
 </html>
