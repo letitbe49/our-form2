@@ -1,39 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>공공기관 서식 서식 리스트</title>
-    <style>
-        body { font-family: sans-serif; padding: 30px; text-align: center; }
-        .form-item { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; background: #eee; border: none; border-radius: 5px; }
-    </style>
+    <title>Public List</title>
 </head>
 <body>
-    <h1>공공기관 서식 서식 목록</h1>
-    <p>필요한 서식을 선택하세요</p>
+    <h1>Public List</h1>
+<p>필요한 서식을 선택하세요</p>
+<a href="subpages/sub-public1.html"><button>시/군/구청/주민센터 서식</button></a>
+<a href="subpages/sub-public2.html"><button>세무서/사업서식</button></a>
+<a href="subpages/sub-public3.html"><button>국민건강보험공단 서식</button></a>
+<a href="subpages/sub-public4.html"><button>고용노동부(노동청) 서식</button></a>
+<a href="subpages/sub-public5.html"><button>경찰 민원 서식</button></a>
+<p><a href="index.html">← 메인으로 돌아가기</a></p>
 
-    <div id="form-list"></div>
-    <p><a href="public.html">← 카테고리로 돌아가기</a></p>
-
-    <script>
-        fetch("forms-public.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("form-list");
-                data.forEach(item => {
-                    const btn = document.createElement("button");
-                    btn.className = "form-item";
-                    btn.innerText = item.name;
-                    btn.onclick = () => {
-                        location.href = item.href;
-                    };
-                    container.appendChild(btn);
-                });
-            })
-            .catch(err => {
-                document.getElementById("form-list").innerText = "서식 목록을 불러오는 데 실패했습니다.";
-            });
-    </script>
 </body>
 </html>
