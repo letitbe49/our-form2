@@ -1,39 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>외국인 전용 서식 서식 리스트</title>
-    <style>
-        body { font-family: sans-serif; padding: 30px; text-align: center; }
-        .form-item { margin: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; background: #eee; border: none; border-radius: 5px; }
-    </style>
+    <title>Global List</title>
 </head>
 <body>
-    <h1>외국인 전용 서식 서식 목록</h1>
-    <p>필요한 서식을 선택하세요</p>
+    <h1>Global List</h1>
+<p>필요한 서식을 선택하세요</p>
+<a href="subpages/sub-global1.html"><button>체류/출입국 관련</button></a>
+<a href="subpages/sub-global2.html"><button>비자/여권 관련</button></a>
+<a href="subpages/sub-global3.html"><button>건강보험/의료</button></a>
+<a href="subpages/sub-global4.html"><button>노동/고용</button></a>
+<a href="subpages/sub-global5.html"><button>세금/송금 관련</button></a>
+<a href="subpages/sub-global6.html"><button>자녀/교육 관련</button></a>
+<a href="subpages/sub-global7.html"><button>주거/임대차</button></a>
+<a href="subpages/sub-global8.html"><button>결혼/가족 관련</button></a>
+<a href="subpages/sub-global9.html"><button>기타 민원서식</button></a>
+<a href="subpages/sub-global10.html"><button>출생/사망/이혼</button></a>
+<a href="subpages/sub-global11.html"><button>기타 행정 서류</button></a>
+<p><a href="index.html">← 메인으로 돌아가기</a></p>
 
-    <div id="form-list"></div>
-    <p><a href="global.html">← 카테고리로 돌아가기</a></p>
-
-    <script>
-        fetch("forms-global.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("form-list");
-                data.forEach(item => {
-                    const btn = document.createElement("button");
-                    btn.className = "form-item";
-                    btn.innerText = item.name;
-                    btn.onclick = () => {
-                        location.href = item.href;
-                    };
-                    container.appendChild(btn);
-                });
-            })
-            .catch(err => {
-                document.getElementById("form-list").innerText = "서식 목록을 불러오는 데 실패했습니다.";
-            });
-    </script>
 </body>
 </html>
