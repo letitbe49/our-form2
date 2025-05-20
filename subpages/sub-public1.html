@@ -1,36 +1,175 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>시/군/구청/주민센터 서식</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 18px; margin-bottom: 8px; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; opacity: 0.3; }
+    .doc-icons a img { opacity: 1.0; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
+  <h1>문서 미리보기</h1>
 
-    <script>
-        fetch("../data/sub-public1.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-0">
+      <div class="doc-title">3-0 - 위임장</div>
+    </a>
+    <p>설명: 어디서나 민원처리제 운영지침</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=12rGyHZYsp4cRrj5zjwSBylQ0ZekYioLr' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-1">
+      <div class="doc-title">3-1 - 주민등록신고서</div>
+    </a>
+    <p>설명: 거주자용 및 영주귀국자용</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1pQtxfslnSuCNEYxddwTgW38WtwYij4-t' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-2">
+      <div class="doc-title">3-2 - 주민등록신고서</div>
+    </a>
+    <p>설명: 재외국민용 서식</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1UaIVE-TrxUx8sW7Ld4_dwwDaBvbRR6C0' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-3">
+      <div class="doc-title">3-3 - 주민등록표 열람 또는 등ㆍ초본 교부 신청서</div>
+    </a>
+    <p>설명: 본인신청용 서식</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1kRYIj8byShN21if1lxdbijA82857iYbl' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-4">
+      <div class="doc-title">3-4 - 주민등록표 열람 또는 등ㆍ초본 교부 신청서</div>
+    </a>
+    <p>설명: 위임용 서식</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1o3rrWWmjpx8Pbu6JabWjA5h4Ys9DPRBp' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-5">
+      <div class="doc-title">3-5 - 전자민원 공통기반서비스 이용신청서</div>
+    </a>
+    <p>설명: 최종(20080404)</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1YQxaCKpoexyrYmXulGz33tqrqWHSELMf' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-6">
+      <div class="doc-title">3-6 - (정정¸ 말소¸ 거주불명)등록신고서</div>
+    </a>
+    <p>설명: 거주자용 및 영주귀국자용</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1uaN1ttJAwmT-ILD1udSR1ckVNNLm_kqW' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-7">
+      <div class="doc-title">3-7 - 전입신고서</div>
+    </a>
+    <p>설명: 세대 모두 이동-2024</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1B0kOq2ZQQh1Ob3WsobxdyWo3vdOb1M1c' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-8">
+      <div class="doc-title">3-8 - 전입 재등록신고서</div>
+    </a>
+    <p>설명: 세대 일부 이동¸ 편입¸ 합가¸ 위임용_2024</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1fmZn1nUiGhj7adsQJPmXwG66DEWU_1ek' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-9">
+      <div class="doc-title">3-9 - 통보서비스(신규¸ 변경¸ 해지)신청서</div>
+    </a>
+    <p>설명: 전입신고,세대주 변경,주민등록증,주민등록표</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1pzi6uUhMO0qlPDN83xA268FzoWCRdAFM' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-10">
+      <div class="doc-title">3-10 - 인감증명서 발급 위임장 등</div>
+    </a>
+    <p>설명: 본인 및 위임용</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1Bej7pR5NOktBlP3JZo4qPm6GaeNuNf9x' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-11">
+      <div class="doc-title">3-11 - 가족관계 등록사항별 증명서 교부 등 신청서</div>
+    </a>
+    <p>설명: 가족관계증명</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1PyoPAdKLxEsqpLFVhASwvG1b6JdM40Kd' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <div class="doc-box">
+    <a href="form-detail.html?id=sub-public1-12">
+      <div class="doc-title">3-12 - 도로점용허가_신청서</div>
+    </a>
+    <p>설명: 도로점용 신청</p>
+    <div class="doc-icons">
+      <a href='https://drive.google.com/uc?id=1I20qGAnsR5C4SLl94kFJEAJFEXDlA_vE' target='_blank'><img src='../img/pdf.png' width='40' alt='PDF'></a>
+      <img src='../img/hwp.png' width='40' alt='HWP'>
+      <img src='../img/doc.png' width='40' alt='DOC'>
+      <img src='../img/xls.png' width='40' alt='XLS'>
+    </div>
+  </div>
+  <p><a href="../public-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
