@@ -1,36 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>외국인서식 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; }
+    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
 
-    <script>
-        fetch("../data/sub-global3.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <div class="category-title">(일본어)日本語</div>
+    <a href="form-detail.html?id=sub-global5-1">
+      <div class="doc-title">82-1 - 운전경력증명서 발급 신청서</div>
+    </a>
+    <p>설명: 運転経歴証明書発行申請書</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">(일본어)日本語</div>
+    <a href="form-detail.html?id=sub-global5-2">
+      <div class="doc-title">82-2 - 운전면허 정기(수시)적성검사 제1종 대형,특수,소형 신청서</div>
+    </a>
+    <p>설명: 運転免許定期（随時）適性検査 第1種 大型、特殊、小型申請書</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">(일본어)日本語</div>
+    <a href="form-detail.html?id=sub-global5-3">
+      <div class="doc-title">82-3 - 운전면허 정기(수시)적성검사 제1종 보통, 제2종 신청서</div>
+    </a>
+    <p>설명: 運転免許定期（随時）適性検査 第1種 普通、第2種申請書</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">(일본어)日本語</div>
+    <a href="form-detail.html?id=sub-global5-4">
+      <div class="doc-title">82-4 - 자동차운전면허증 갱신, 자동차운전면허증 재발급, 영문ㆍ국제ㆍ모바일운전면허증 발급, 운전면허증갱신발급(적성검사)연기) 신청서</div>
+    </a>
+    <p>설명: 自動車運転免許証の更新、自動車運転免許証の再発行、英語・国際・モバイル運転免許証の発行、運転免許証更新発行（適性検査）延期）申請書</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">(일본어)日本語</div>
+    <a href="form-detail.html?id=sub-global5-5">
+      <div class="doc-title">82-5 - 정보공개 청구서</div>
+    </a>
+    <p>설명: 情報公開請求書</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+  <p><a href="../global-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
