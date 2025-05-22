@@ -6,19 +6,23 @@
   <style>
     body { font-family: Arial, sans-serif; padding: 20px; }
     h1 { font-size: 28px; }
-    .description { font-size: 18px; margin-top: 10px; }
-    .category { font-weight: bold; font-size: 20px; margin-top: 20px; color: #333; }
-    .icons img { margin-right: 8px; width: 40px; vertical-align: middle; }
-    .back { margin-top: 40px; display: block; font-size: 16px; text-decoration: none; }
+    .description, .category { font-size: 18px; margin: 10px 0; }
+    .icons img { width: 64px; margin: 0 10px; vertical-align: middle; }
+    .section-title { font-weight: bold; font-size: 18px; margin-top: 30px; }
+    .back { margin-top: 40px; display: block; font-size: 16px; color: blue; text-decoration: none; }
   </style>
 </head>
 <body>
-  <div id="content">
-    <p>불러오는 중...</p>
-  </div>
+  <h1 id="title">서식명 : </h1>
+  <div class="description" id="description">간단 설명 : </div>
+  <div class="category" id="category">분류(카테고리) : </div>
+
+  <div class="section-title">다운로드 링크</div>
+  <div class="icons" id="icons"></div>
+
+  <a href="#" class="back" id="backLink">&larr; 목록으로 돌아가기</a>
 
   <script>
-    // 쿼리스트링에서 id 가져오기
     function getQueryParam(name) {
       const params = new URLSearchParams(window.location.search);
       return params.get(name);
@@ -26,35 +30,35 @@
 
     const id = getQueryParam("id");
 
-    // forms.json에서 해당 id에 맞는 문서 정보 불러오기
     fetch("../data/forms.json")
       .then(response => response.json())
       .then(data => {
         const form = data.find(item => item.id === id);
-        const contentDiv = document.getElementById("content");
+        const title = document.getElementById("title");
+        const description = document.getElementById("description");
+        const category = document.getElementById("category");
+        const icons = document.getElementById("icons");
+        const backLink = document.getElementById("backLink");
 
         if (!form) {
-          contentDiv.innerHTML = "<p>해당 문서를 찾을 수 없습니다.</p>";
+          title.innerText = "해당 문서를 찾을 수 없습니다.";
+          description.innerText = "";
+          category.innerText = "";
+          icons.innerHTML = "";
           return;
         }
 
-        let iconsHTML = "";
-if (form.pdf) iconsHTML += `<a href="${form.pdf}" target="_blank"><img src='../img/pdf.png' alt='PDF'></a>`;
-if (form.hwp) iconsHTML += `<a href="${form.hwp}" target="_blank"><img src='../img/hwp.png' alt='HWP'></a>`;
-if (form.doc) iconsHTML += `<a href="${form.doc}" target="_blank"><img src='../img/doc.png' alt='DOC'></a>`;
-if (form.xls) iconsHTML += `<a href="${form.xls}" target="_blank"><img src='../img/xls.png' alt='XLS'></a>`;
+        title.innerText += form.code + " - " + form.title;
+        description.innerText += form.description;
+        category.innerText += form.category;
 
-        contentDiv.innerHTML = `
-          <h1>${form.code} - ${form.title}</h1>
-          <p class="category">${form.category}</p>
-          <p class="description">${form.description}</p>
-          <div class="icons">${iconsHTML}</div>
-          <a class="back" href="javascript:history.back()">← 목록으로 돌아가기</a>
-        `;
-      })
-      .catch(error => {
-        document.getElementById("content").innerHTML = "<p>데이터를 불러오는 데 실패했습니다.</p>";
-        console.error("Error loading forms.json:", error);
+        if (form.pdf) icons.innerHTML += `<a href="${form.pdf}" target="_blank"><img src="../img/pdf.png" alt="PDF"></a>`;
+        if (form.doc) icons.innerHTML += `<a href="${form.doc}" target="_blank"><img src="../img/doc.png" alt="DOC"></a>`;
+        if (form.hwp) icons.innerHTML += `<a href="${form.hwp}" target="_blank"><img src="../img/hwp.png" alt="HWP"></a>`;
+        if (form.xls) icons.innerHTML += `<a href="${form.xls}" target="_blank"><img src="../img/xls.png" alt="XLS"></a>`;
+
+        const categoryPath = form.id.split('-')[1];
+        backLink.href = `../subpages/sub-${categoryPath}.html`;
       });
   </script>
 </body>
