@@ -1,36 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>개인서식 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; }
+    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
 
-    <script>
-        fetch("../data/sub-personal3.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-1">
+      <div class="doc-title">4-0 - 위임장(어디서나 민원처리제 운영지침)</div>
+    </a>
+    <p>설명: 어디서나 민원처리제 운영지침</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-2">
+      <div class="doc-title">4-1 - 가족관계등록창설신고서</div>
+    </a>
+    <p>설명: 가족관계등록에 관한 창설 신고양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-3">
+      <div class="doc-title">4-2 - 혼인신고서</div>
+    </a>
+    <p>설명: 혼인을 위한 신고 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-4">
+      <div class="doc-title">4-3 - 혼인취소신고서</div>
+    </a>
+    <p>설명: 혼인의 취소를 위한 신고 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-5">
+      <div class="doc-title">4-4 - 이혼(친권자지정)신고서</div>
+    </a>
+    <p>설명: 혼인자 간의 이혼과 친권자지정에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-6">
+      <div class="doc-title">4-5 - 입양신고서</div>
+    </a>
+    <p>설명: 입양을 위한 신고양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-7">
+      <div class="doc-title">4-6 - 개명신고서</div>
+    </a>
+    <p>설명: 개명(이름 바꿈)에 관한 신고양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-8">
+      <div class="doc-title">4-7 - 사망신고서</div>
+    </a>
+    <p>설명: 사망에 관한 신고양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-9">
+      <div class="doc-title">4-8 - 국적취득신고서</div>
+    </a>
+    <p>설명: 국적취득에 관한 신고 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-10">
+      <div class="doc-title">4-9 - 귀화신고서</div>
+    </a>
+    <p>설명: 귀하에 대한 신고 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-11">
+      <div class="doc-title">4-10 - 출생신고서</div>
+    </a>
+    <p>설명: 출생에 대한 신고 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">가족관계 민원 서식</div>
+    <a href="form-detail.html?id=sub-personal3-12">
+      <div class="doc-title">4-11 - 가족관계 영문증명서 발급신청서</div>
+    </a>
+    <p>설명: Application for issuance of family relationship certificate in English</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+  <p><a href="../personal-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
