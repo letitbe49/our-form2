@@ -1,36 +1,107 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>개인서식 2</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; }
+    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
 
-    <script>
-        fetch("../data/sub-personal2.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-1">
+      <div class="doc-title">2-1 - 입사지원서</div>
+    </a>
+    <p>설명: 입사를 위한 지원서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-2">
+      <div class="doc-title">2-2 - 자기소개서</div>
+    </a>
+    <p>설명: 입사지원서와 함께 작성되는 자기소개서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-3">
+      <div class="doc-title">2-3 - 견적서양식(일반)</div>
+    </a>
+    <p>설명: 일반 견적서의 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-4">
+      <div class="doc-title">2-4 - 건설공사표준도급계약서</div>
+    </a>
+    <p>설명: 건설공사의 하도급에 관한 표준계약서</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-5">
+      <div class="doc-title">2-5 - 퇴직서(일반)</div>
+    </a>
+    <p>설명: 퇴직에 대한 일반 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-6">
+      <div class="doc-title">2-6 - 사직서 양식</div>
+    </a>
+    <p>설명: 사직에 관한 일반 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-7">
+      <div class="doc-title">2-7 - 개인정보+수집∙이용+및+제3자+제공동의서</div>
+    </a>
+    <p>설명: 개인정보수집,이용,제3자의 제공에 관한 동의서</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-8">
+      <div class="doc-title">2-8 - 이력서 양식(1)</div>
+    </a>
+    <p>설명: 입사를 위해 이력을 나열하는 양삭</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-9">
+      <div class="doc-title">2-9 - 이력서 자기소개서 양식(2)</div>
+    </a>
+    <p>설명: 입사를 위해 이력을 나열하는 양삭+자기소개서</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">신청서, 제출서류</div>
+    <a href="form-detail.html?id=sub-personal2-10">
+      <div class="doc-title">2-10 - 이력서 자기소개서 양식(3)</div>
+    </a>
+    <p>설명: 입사를 위해 이력을 나열하는 양삭+자기소개서</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+  <p><a href="../personal-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
