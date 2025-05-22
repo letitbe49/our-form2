@@ -2,61 +2,23 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>서식 상세보기 - 아워폼</title>
+  <title>문서 상세보기</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 30px; }
-    .preview-img { max-width: 300px; margin: 20px auto; display: block; }
-    .download-btn { margin: 10px; padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { font-size: 28px; }
+    .description { font-size: 18px; margin-top: 10px; }
+    .category { font-weight: bold; font-size: 20px; margin-top: 20px; color: #333; }
+    .icons img { margin-right: 8px; width: 40px; vertical-align: middle; }
+    .back { margin-top: 40px; display: block; font-size: 16px; }
   </style>
 </head>
 <body>
-
-  <h1 id="form-title">서식명</h1>
-  <p id="form-desc">간단한 설명이 여기에 나옵니다.</p>
-
-  <img id="form-image" class="preview-img" src="" alt="서식 미리보기">
-
-  <div>
-    <a id="pdf-link" class="download-btn" download>PDF 다운로드</a>
-    <a id="hwp-link" class="download-btn" download>HWP 다운로드</a>
-    <a id="doc-link" class="download-btn" download>DOC 다운로드</a>
-    <a id="xls-link" class="download-btn" download>XLS 다운로드</a>
+  <div id="content">
+    <p>불러오는 중...</p>
   </div>
 
-  <p><a href="javascript:history.back()">← 뒤로 가기</a></p>
-
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const formName = params.get("form");
-
-    const formData = {
-      "주민등록등본": {
-        title: "주민등록등본 신청서",
-        desc: "주민등록등본 발급용 서식입니다. 주민센터에서 사용 가능.",
-        image: "https://via.placeholder.com/300x400.png?text=주민등록등본+미리보기",
-        files: {
-          pdf: "files/sample-jumin.pdf",
-          hwp: "files/sample-jumin.hwp",
-          doc: "files/sample-jumin.docx",
-          xls: "files/sample-jumin.xlsx"
-        }
-      }
-    };
-
-    if (formData[formName]) {
-      const data = formData[formName];
-      document.getElementById("form-title").innerText = data.title;
-      document.getElementById("form-desc").innerText = data.desc;
-      document.getElementById("form-image").src = data.image;
-
-      document.getElementById("pdf-link").href = data.files.pdf;
-      document.getElementById("hwp-link").href = data.files.hwp;
-      document.getElementById("doc-link").href = data.files.doc;
-      document.getElementById("xls-link").href = data.files.xls;
-    } else {
-      document.getElementById("form-title").innerText = "서식 정보를 찾을 수 없습니다.";
-    }
+    // 여기에 자바스크립트 코드를 넣을 거예요 (다음 단계)
   </script>
-
 </body>
 </html>
