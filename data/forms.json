@@ -1870,7 +1870,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-1",
+    "id": "sub-public1-0",
     "code": "3-0",
     "title": "위임장",
     "description": "어디서나 민원처리제 운영지침",
@@ -1881,7 +1881,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-2",
+    "id": "sub-public1-1",
     "code": "3-1",
     "title": "주민등록신고서",
     "description": "거주자용 및 영주귀국자용",
@@ -1892,7 +1892,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-3",
+    "id": "sub-public1-2",
     "code": "3-2",
     "title": "주민등록신고서",
     "description": "재외국민용 서식",
@@ -1903,7 +1903,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-4",
+    "id": "sub-public1-3",
     "code": "3-3",
     "title": "주민등록표 열람 또는 등ㆍ초본 교부 신청서",
     "description": "본인신청용 서식",
@@ -1914,7 +1914,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-5",
+    "id": "sub-public1-4",
     "code": "3-4",
     "title": "주민등록표 열람 또는 등ㆍ초본 교부 신청서",
     "description": "위임용 서식",
@@ -1925,7 +1925,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-6",
+    "id": "sub-public1-5",
     "code": "3-5",
     "title": "전자민원 공통기반서비스 이용신청서",
     "description": "최종(20080404)",
@@ -1936,7 +1936,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-7",
+    "id": "sub-public1-6",
     "code": "3-6",
     "title": "(정정¸ 말소¸ 거주불명)등록신고서",
     "description": "거주자용 및 영주귀국자용",
@@ -1947,7 +1947,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-8",
+    "id": "sub-public1-7",
     "code": "3-7",
     "title": "전입신고서",
     "description": "세대 모두 이동-2024",
@@ -1958,7 +1958,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-9",
+    "id": "sub-public1-8",
     "code": "3-8",
     "title": "전입 재등록신고서",
     "description": "세대 일부 이동¸ 편입¸ 합가¸ 위임용_2024",
@@ -1969,7 +1969,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-10",
+    "id": "sub-public1-9",
     "code": "3-9",
     "title": "통보서비스(신규¸ 변경¸ 해지)신청서",
     "description": "전입신고,세대주 변경,주민등록증,주민등록표",
@@ -1980,7 +1980,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-11",
+    "id": "sub-public1-10",
     "code": "3-10",
     "title": "인감증명서 발급 위임장 등",
     "description": "본인 및 위임용",
@@ -1991,7 +1991,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-12",
+    "id": "sub-public1-11",
     "code": "3-11",
     "title": "가족관계 등록사항별 증명서 교부 등 신청서",
     "description": "가족관계증명",
@@ -2002,7 +2002,7 @@
     "xls": ""
   },
   {
-    "id": "sub-public1-13",
+    "id": "sub-public1-12",
     "code": "3-12",
     "title": "도로점용허가_신청서",
     "description": "도로점용 신청",
