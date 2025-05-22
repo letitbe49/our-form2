@@ -1,36 +1,89 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>외국인서식 4</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; }
+    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
 
-    <script>
-        fetch("../data/sub-global4.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-1">
+      <div class="doc-title">83-1 - 통합 신청서(1)</div>
+    </a>
+    <p>설명: 合併申請表</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-2">
+      <div class="doc-title">83-2 - 통합 신청서(2)</div>
+    </a>
+    <p>설명: 合并申请表</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-3">
+      <div class="doc-title">83-3 - 체류지 변경신고서(출입국관리법 시행규칙)[중국]</div>
+    </a>
+    <p>설명: 居住地变更申报表</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-4">
+      <div class="doc-title">83-4 - 운전경력증명서 발급 신청서</div>
+    </a>
+    <p>설명: 申请签发驾驶经验证明书</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-5">
+      <div class="doc-title">83-5 - 운전면허 정기(수시)적성검사 제1종 대형,특수,소형 신청서</div>
+    </a>
+    <p>설명: 驾驶执照定期（定期）能力倾向测验第1类大型、特殊、小型申请书</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-6">
+      <div class="doc-title">83-6 - 운전면허 정기(수시)적성검사 제1종 보통, 제2종 신청서</div>
+    </a>
+    <p>설명: 驾驶执照定期（定期）能力倾向测验第1类普通、第2类申请书</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-7">
+      <div class="doc-title">83-7 - 자동차운전면허증 갱신, 자동차운전면허증 재발급, 영문ㆍ국제ㆍ모바일운전면허증 발급, 운전면허증갱신발급(적성검사)연기) 신청서</div>
+    </a>
+    <p>설명: 申请更新驾驶执照、补发驾驶执照、签发英文/国际/移动驾驶执照、延期更新驾驶执照（适应性测试）</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">중국어(中国人)</div>
+    <a href="form-detail.html?id=sub-global6-8">
+      <div class="doc-title">83-8 - 정보공개 청구서</div>
+    </a>
+    <p>설명: 信息披露索赔</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+  <p><a href="../global-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
