@@ -17,8 +17,49 @@
     <p>불러오는 중...</p>
   </div>
 
-  <script>
-    // 여기에 자바스크립트 코드를 넣을 거예요 (다음 단계)
-  </script>
+<script>
+  // 1. 주소창에서 ?id= 값을 읽는 함수
+  function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  const id = getQueryParam("id");
+
+  // 2. data/forms.json 파일 불러오기
+  fetch("data/forms.json")
+    .then(response => response.json())
+    .then(data => {
+      // 3. 해당 id를 가진 문서를 찾음
+      const form = data.find(item => item.id === id);
+
+      const contentDiv = document.getElementById("content");
+
+      if (!form) {
+        contentDiv.innerHTML = "<p>해당 문서를 찾을 수 없습니다.</p>";
+        return;
+      }
+
+      // 4. 아이콘 표시
+      let iconsHTML = "";
+      if (form.pdf) iconsHTML += "<img src='img/pdf.png' alt='PDF'>";
+      if (form.hwp) iconsHTML += "<img src='img/hwp.png' alt='HWP'>";
+      if (form.doc) iconsHTML += "<img src='img/doc.png' alt='DOC'>";
+      if (form.xls) iconsHTML += "<img src='img/xls.png' alt='XLS'>";
+
+      // 5. 내용 보여주기
+      contentDiv.innerHTML = `
+        <h1>${form.code} - ${form.title}</h1>
+        <p class="category">${form.category}</p>
+        <p class="description">${form.description}</p>
+        <div class="icons">${iconsHTML}</div>
+        <a class="back" href="javascript:history.back()">← 목록으로 돌아가기</a>
+      `;
+    })
+    .catch(error => {
+      document.getElementById("content").innerHTML = "<p>데이터를 불러오는 데 실패했습니다.</p>";
+      console.error("Error loading forms.json:", error);
+    });
+</script>
 </body>
 </html>
