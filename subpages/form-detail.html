@@ -39,10 +39,10 @@
         }
 
         let iconsHTML = "";
-        if (form.pdf) iconsHTML += "<img src='../img/pdf.png' alt='PDF'>";
-        if (form.hwp) iconsHTML += "<img src='../img/hwp.png' alt='HWP'>";
-        if (form.doc) iconsHTML += "<img src='../img/doc.png' alt='DOC'>";
-        if (form.xls) iconsHTML += "<img src='../img/xls.png' alt='XLS'>";
+if (form.pdf) iconsHTML += `<a href="${form.pdf}" target="_blank"><img src='../img/pdf.png' alt='PDF'></a>`;
+if (form.hwp) iconsHTML += `<a href="${form.hwp}" target="_blank"><img src='../img/hwp.png' alt='HWP'></a>`;
+if (form.doc) iconsHTML += `<a href="${form.doc}" target="_blank"><img src='../img/doc.png' alt='DOC'></a>`;
+if (form.xls) iconsHTML += `<a href="${form.xls}" target="_blank"><img src='../img/xls.png' alt='XLS'></a>`;
 
         contentDiv.innerHTML = `
           <h1>${form.code} - ${form.title}</h1>
