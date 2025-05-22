@@ -1,36 +1,287 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>개인서식 1</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; }
+    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
 
-    <script>
-        fetch("../data/sub-personal1.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-1">
+      <div class="doc-title">1-1 - 표준근로계약서(일반)</div>
+    </a>
+    <p>설명: 일반표준 근로계약에 대한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-2">
+      <div class="doc-title">1-2 - 표준근로계약서(미성년자)</div>
+    </a>
+    <p>설명: 미성년자에 대한 근로계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-3">
+      <div class="doc-title">1-3 - 표준근로계약서(건설일용직)</div>
+    </a>
+    <p>설명: 건설일용직에 대한 근로계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-4">
+      <div class="doc-title">1-4 - 표준임대차계약서</div>
+    </a>
+    <p>설명: 표준임대차계약에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-5">
+      <div class="doc-title">1-5 - 단기임대차계약서</div>
+    </a>
+    <p>설명: 표준임대차의 단기계약에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-6">
+      <div class="doc-title">1-6 - 토지임대차계약서(사업용)</div>
+    </a>
+    <p>설명: 토지 임대차계약에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-7">
+      <div class="doc-title">1-7 - 건물임대차계약서</div>
+    </a>
+    <p>설명: 건물 임대차계약에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-8">
+      <div class="doc-title">1-8 - 토지매매계약서(일반)</div>
+    </a>
+    <p>설명: 토지 매매계약에 관한 일반양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-9">
+      <div class="doc-title">1-9 - 토지_ 건물매매계약서(임차인이 있는 경우)</div>
+    </a>
+    <p>설명: 임차인이 있는경우의 부동산 매매계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-10">
+      <div class="doc-title">1-10 - 일반점포의 임대차계약서</div>
+    </a>
+    <p>설명: 임대차계약서 (일반점포)에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-11">
+      <div class="doc-title">1-11 - 아파트_ 맨션_ 빌라 등의 임대사업용건물 임대차계약서</div>
+    </a>
+    <p>설명: 임대사업용 건물의 임대차계약에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-12">
+      <div class="doc-title">1-12 - 공장매매계약서</div>
+    </a>
+    <p>설명: 공장의 매매에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-13">
+      <div class="doc-title">1-13 - 임대차계약 해지통지서</div>
+    </a>
+    <p>설명: 임대차계약의 해지에 관한 통지서</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-14">
+      <div class="doc-title">1-14 - 임대차계약서(자동차)</div>
+    </a>
+    <p>설명: 자동차 임대차계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-15">
+      <div class="doc-title">1-15 - 임대차계약서(자동판매기)</div>
+    </a>
+    <p>설명: 자동판매기의 임대차계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-16">
+      <div class="doc-title">1-16 - 보증계약서(일반)</div>
+    </a>
+    <p>설명: 일반 보증계약을 위한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-17">
+      <div class="doc-title">1-17 - 비밀보장계약서</div>
+    </a>
+    <p>설명: 비밀보장에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-18">
+      <div class="doc-title">1-18 - 상품매매계약서</div>
+    </a>
+    <p>설명: 상품의 매매에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-19">
+      <div class="doc-title">1-19 - 위임계약서(일반)</div>
+    </a>
+    <p>설명: 일반 위임에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-20">
+      <div class="doc-title">1-20 - 위탁계약서(회사의 경영)</div>
+    </a>
+    <p>설명: 회사 위탁경영에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-21">
+      <div class="doc-title">1-21 - 할부판매계약서</div>
+    </a>
+    <p>설명: 할부판매에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-22">
+      <div class="doc-title">1-22 - 공동경영계약서</div>
+    </a>
+    <p>설명: 공동경영에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-23">
+      <div class="doc-title">1-23 - 기계류 임대차(리스)계약서</div>
+    </a>
+    <p>설명: 기계류 임대차계약에 관한 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-24">
+      <div class="doc-title">1-24 - 임치계약서</div>
+    </a>
+    <p>설명: 임치에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-25">
+      <div class="doc-title">1-25 - 컨설팅업무계약서</div>
+    </a>
+    <p>설명: 컨설팅업무에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-26">
+      <div class="doc-title">1-26 - 채권양도계약서</div>
+    </a>
+    <p>설명: 채권의 양도에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-27">
+      <div class="doc-title">1-27 - 기술제휴계약서</div>
+    </a>
+    <p>설명: 기술제휴에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-28">
+      <div class="doc-title">1-28 - 금전차용계약서</div>
+    </a>
+    <p>설명: 금전차용에 관한 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-29">
+      <div class="doc-title">1-29 - 상가건물임대차표준계약서</div>
+    </a>
+    <p>설명: 상가건물에 관한 임대차표준계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">계약서 양식</div>
+    <a href="form-detail.html?id=sub-personal1-30">
+      <div class="doc-title">1-30 - OEM 기본계약서</div>
+    </a>
+    <p>설명: OEM에 관한 기본 계약서 양식</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+  <p><a href="../personal-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
