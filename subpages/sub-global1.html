@@ -1,36 +1,233 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>아워폼 - 문서 미리보기</title>
-    <style>
-        body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
-        .card { background: white; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; }
-        .desc { color: #555; margin-bottom: 10px; }
-        .link { color: #0066cc; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8">
+  <title>외국인서식 1</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
+    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
+    .doc-icons img { margin-right: 8px; vertical-align: middle; }
+    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+  </style>
 </head>
 <body>
-    <h2>문서 미리보기</h2>
-    <div id="container"></div>
 
-    <script>
-        fetch("../data/sub-global1.json")
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById("container");
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    card.className = "card";
-                    card.innerHTML = `
-                        <div class="title">${item.code} - ${item.title}</div>
-                        <div class="desc">설명: ${item.description}</div>
-                        <div><a class="link" href="${item.pdf}" target="_blank">📄 PDF 보기</a></div>
-                    `;
-                    container.appendChild(card);
-                });
-            });
-    </script>
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-1">
+      <div class="doc-title">8-1 - 영문이력서</div>
+    </a>
+    <p>설명: English resume</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-2">
+      <div class="doc-title">8-2 - 외국인전용_계약서 표준 근로계약서(일반)</div>
+    </a>
+    <p>설명: Standard employment contract</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-3">
+      <div class="doc-title">8-3 - 외국인전용_계약서 표준 근로계약서(농업,축산업,어업)</div>
+    </a>
+    <p>설명: Standard employment contract(Agriculture, livestock farming, fishing)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-4">
+      <div class="doc-title">8-4 - 입국신고서(출입국관리법 시행규칙)</div>
+    </a>
+    <p>설명: Entry report</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-5">
+      <div class="doc-title">8-5 - 출국신고서 (외국인용)</div>
+    </a>
+    <p>설명: Departure Declaration Form</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-6">
+      <div class="doc-title">8-6 - 출입국신고서(국민용)(출입국관리법 시행규칙)</div>
+    </a>
+    <p>설명: Immigration Declaration Form (for citizens)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-7">
+      <div class="doc-title">8-7 - 통합신청서(외국인등록)1</div>
+    </a>
+    <p>설명: Integrated Application Form (Foreigner Registration)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-8">
+      <div class="doc-title">8-8 - 체류지 변경신고서(출입국관리법 시행규칙)1</div>
+    </a>
+    <p>설명: Change of Residence Notification Form</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-9">
+      <div class="doc-title">8-9 - 체류자격외활동허가신청서(통합신청서)</div>
+    </a>
+    <p>설명: Application for permission to engage in activities outside of the scope of residence</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-10">
+      <div class="doc-title">8-10 - 출입국에 관한 사실증명 CERTIFICATE OF ENTRY & DEPARTURE</div>
+    </a>
+    <p>설명: CERTIFICATE OF ENTRY & DEPARTURE</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-11">
+      <div class="doc-title">8-11 - 사실증명 발급ㆍ열람 신청서 APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT</div>
+    </a>
+    <p>설명: APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-12">
+      <div class="doc-title">8-12 - 출국기한유예신청서(출입국관리법 시행규칙)</div>
+    </a>
+    <p>설명: Application for deferment of departure deadline</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-13">
+      <div class="doc-title">8-13 - 개인정보 수집·이용에 대한 동의서</div>
+    </a>
+    <p>설명: Consent to collection and use of personal information</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-14">
+      <div class="doc-title">8-14 - 개인정보 조회 동의서</div>
+    </a>
+    <p>설명: Personal information inquiry consent form</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-15">
+      <div class="doc-title">8-15 - 외국인체류확인서 열람 또는 교부 신청서</div>
+    </a>
+    <p>설명: Application for viewing or issuance of foreigner residence confirmation certificate</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-16">
+      <div class="doc-title">8-16 - 자기소개서</div>
+    </a>
+    <p>설명: self-introduction</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-17">
+      <div class="doc-title">8-17 - 응시원서</div>
+    </a>
+    <p>설명: application form</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-18">
+      <div class="doc-title">8-18 - 외국인_건강보험_가입제외_신청서</div>
+    </a>
+    <p>설명: Foreigner_Health_Insurance_Exclusion_Application_Form</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-19">
+      <div class="doc-title">8-19 - 신원진술서(KOR)</div>
+    </a>
+    <p>설명: Identity Statement (KOR)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-20">
+      <div class="doc-title">8-20 - 신원진술서(ENG)</div>
+    </a>
+    <p>설명: Identity Statement (ENG)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-21">
+      <div class="doc-title">8-21 - 외국인 대상자 제출 서류 안내</div>
+    </a>
+    <p>설명: Documents to be submitted by foreign nationals</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-22">
+      <div class="doc-title">8-22 - 분실물 신고서(영문)</div>
+    </a>
+    <p>설명: Lost and Found Report (English)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-23">
+      <div class="doc-title">8-23 - 외국인근로자_장기요양보험_가입제외_신청서(ENG)</div>
+    </a>
+    <p>설명: Foreign Workers_Long-term Care Insurance_Exclusion_Application Form (ENG)</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+
+  <div class="doc-box">
+    <div class="category-title">공통</div>
+    <a href="form-detail.html?id=sub-global1-24">
+      <div class="doc-title">8-24 - 재외국민_및_외국인_건강보험_가입제외_신청서</div>
+    </a>
+    <p>설명: Application for Exclusion from Health Insurance for Overseas Koreans and Foreigners</p>
+    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'><img src='../img/doc.png' width='40' alt='DOC'></div>
+  </div>
+  <p><a href="../global-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
