@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>아워폼 Our Form - 우리의 양식 / 모두의 서식</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: sans-serif;
       text-align: center;
@@ -38,19 +42,18 @@
     }
 
     .category-btn {
-      flex: 1 1 250px;
-      padding: 30px;
-      font-size: 1.1rem;
-      cursor: pointer;
+      width: 280px;
+      height: 60px;
+      padding: 0;
+      font-size: 1rem;
       background-color: #f0f0f0;
       border: 1px solid #ccc;
       border-radius: 8px;
-      min-width: 250px;
-      max-width: 300px;
-      height: 100px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
+      line-height: 1.2;
       text-align: center;
       word-break: keep-all;
     }
@@ -78,9 +81,9 @@
 
       .category-btn {
         width: 90%;
-        max-width: 100%;
-        font-size: 0.9rem;
+        max-width: 90%;
         height: 40px;
+        font-size: 0.9rem;
         padding: 0;
         line-height: 40px;
       }
@@ -112,8 +115,8 @@
   </div>
 
   <div class="icon-links">
-    <a href="#"><img src="stamp-icon.png" alt="온라인 도장"></a>
-    <a href="#"><img src="fax-icon.png" alt="모바일 팩스"></a>
+    <a href="#"><img src="stamp-icon.png" alt="온라인 도장" /></a>
+    <a href="#"><img src="fax-icon.png" alt="모바일 팩스" /></a>
   </div>
 
 </body>
