@@ -2,39 +2,46 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>외국인전용 서식2</title>
+  <title>sub-global2.html</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
     }
     input[type="text"] {
       width: 100%;
-      padding: 12px;
-      font-size: 16px;
+      padding: 14px;
+      font-size: 17px;
       margin-bottom: 30px;
-      border: 1px solid #ccc;
+      border: 2px solid #bbb;
       border-radius: 6px;
     }
     .card {
-      background: white;
+      background: #fff;
+      border: 2px solid #ddd;
+      border-left: 6px solid #1976d2;
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
     .card h3 {
       font-size: 20px;
+      font-weight: bold;
       margin: 0 0 10px;
-      color: #003399;
+      color: #0d47a1;
     }
     .card p {
-      margin: 5px 0;
+      margin: 4px 0;
       font-size: 16px;
+      color: #333;
+    }
+    .icons {
+      margin-top: 10px;
     }
     .icons img {
-      width: 40px;
+      width: 42px;
       margin-right: 10px;
       vertical-align: middle;
     }
@@ -44,50 +51,56 @@
 
   <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
 
-  <div class="doc-box">
-    <div class="category-title">영어(English)</div>
-    <a href="form-detail.html?id=sub-global4-1">
-      <div class="doc-title">81-1 - 운전경력증명서 발급 신청서</div>
-    </a>
-    <p>설명: Application for issuance of driving experience certificate</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
+  <div id="cardList">
+    
+    <div class="card">
+      <h3>81-1 - 운전경력증명서 발급 신청서</h3>
+      <p><strong>분류:</strong> 영어(English)</p>
+      <p><strong>설명:</strong> Application for issuance of driving experience certificate</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1XzUXmvHbU1QhjsaRuy37mFuh0kJbHUaz" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>81-2 - 운전면허 정기(수시)적성검사 제1종 대형,특수,소형 신청서</h3>
+      <p><strong>분류:</strong> 영어(English)</p>
+      <p><strong>설명:</strong> Driver's License Regular (Periodical) Aptitude Test Type 1 Large, Special, Small Application Form</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1_cPKgUZrCcfgesEX2Hal6L_n5LHQzdku" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>81-3 - 운전면허 정기(수시)적성검사 제1종 보통, 제2종 신청서</h3>
+      <p><strong>분류:</strong> 영어(English)</p>
+      <p><strong>설명:</strong> 
+Driver's License Regular (Periodical) Aptitude Test Type 1 Ordinary, Type 2 Application Form</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1Q-N2iyYEQb1MEH6liKncfqKwhKKMaaL1" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>81-4 - 자동차운전면허증 갱신, 자동차운전면허증 재발급, 영문ㆍ국제ㆍ모바일운전면허증 발급, 운전면허증갱신발급(적성검사)연기) 신청서</h3>
+      <p><strong>분류:</strong> 영어(English)</p>
+      <p><strong>설명:</strong> Application for renewal of driver's license, reissue of driver's license, issuance of English/international/mobile driver's license, postponement of driver's license renewal (aptitude test)</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1nCEkDdBGCgnrJrpQmN5mlG1tCgjVqGVs" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>81-5 - 정보공개 청구서</h3>
+      <p><strong>분류:</strong> 영어(English)</p>
+      <p><strong>설명:</strong> Information Disclosure Claim</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1-NOJyLKjKcqlcLUAfYvD_Stnva4GHgb9" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
   </div>
 
-  <div class="doc-box">
-    <div class="category-title">영어(English)</div>
-    <a href="form-detail.html?id=sub-global4-2">
-      <div class="doc-title">81-2 - 운전면허 정기(수시)적성검사 제1종 대형,특수,소형 신청서</div>
-    </a>
-    <p>설명: Driver's License Regular (Periodical) Aptitude Test Type 1 Large, Special, Small Application Form</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
+  <script>
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
 
-  <div class="doc-box">
-    <div class="category-title">영어(English)</div>
-    <a href="form-detail.html?id=sub-global4-3">
-      <div class="doc-title">81-3 - 운전면허 정기(수시)적성검사 제1종 보통, 제2종 신청서</div>
-    </a>
-    <p>설명: Driver's License Regular (Periodical) Aptitude Test Type 1 Ordinary, Type 2 Application Form</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">영어(English)</div>
-    <a href="form-detail.html?id=sub-global4-4">
-      <div class="doc-title">81-4 - 자동차운전면허증 갱신, 자동차운전면허증 재발급, 영문ㆍ국제ㆍ모바일운전면허증 발급, 운전면허증갱신발급(적성검사)연기) 신청서</div>
-    </a>
-    <p>설명: Application for renewal of driver's license, reissue of driver's license, issuance of English/international/mobile driver's license, postponement of driver's license renewal (aptitude test)</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">영어(English)</div>
-    <a href="form-detail.html?id=sub-global4-5">
-      <div class="doc-title">81-5 - 정보공개 청구서</div>
-    </a>
-    <p>설명: Information Disclosure Claim</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-  <p><a href="../global-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
