@@ -10,7 +10,6 @@
     .section-title { font-weight: bold; font-size: 18px; margin-top: 30px; }
     .icons img { width: 85px; margin: 0 10px; vertical-align: middle; }
     .back { margin-top: 40px; display: block; font-size: 16px; color: blue; text-decoration: none; }
-    iframe { border: 1px solid #ccc; margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -19,7 +18,7 @@
   <div class="category" id="category">분류(카테고리) :</div>
 
   <div class="section-title">미리보기</div>
-  <div id="previewArea">PDF 미리보기를 준비 중입니다...</div>
+  <div id="previewArea">※ 이 문서는 미리보기를 지원하지 않습니다. 아래 아이콘을 눌러 다운로드하세요.</div>
 
   <div class="section-title">다운로드 링크</div>
   <div class="icons" id="icons"></div>
@@ -43,14 +42,12 @@
         const category = document.getElementById("category");
         const icons = document.getElementById("icons");
         const backLink = document.getElementById("backLink");
-        const previewArea = document.getElementById("previewArea");
 
         if (!form) {
           title.innerText = "해당 문서를 찾을 수 없습니다.";
           description.innerText = "";
           category.innerText = "";
           icons.innerHTML = "";
-          previewArea.innerHTML = "";
           return;
         }
 
@@ -58,22 +55,11 @@
         description.innerText = form.description;
         category.innerText = form.category;
 
-        // 📄 PDF 미리보기 썸네일 표시
-        if (form.pdf) {
-          previewArea.innerHTML = `
-            <iframe src="../files/${form.pdf}" width="100%" height="300px"></iframe>
-          `;
-        } else {
-          previewArea.innerText = "PDF 파일이 등록되지 않았습니다.";
-        }
+        if (form.pdf) icons.innerHTML += `<a href="${form.pdf}" target="_blank"><img src="../img/pdf.png" alt="PDF"></a>`;
+        if (form.doc) icons.innerHTML += `<a href="${form.doc}" target="_blank"><img src="../img/doc.png" alt="DOC"></a>`;
+        if (form.hwp) icons.innerHTML += `<a href="${form.hwp}" target="_blank"><img src="../img/hwp.png" alt="HWP"></a>`;
+        if (form.xls) icons.innerHTML += `<a href="${form.xls}" target="_blank"><img src="../img/xls.png" alt="XLS"></a>`;
 
-        // 다운로드 아이콘들
-        if (form.pdf) icons.innerHTML += `<a href="../files/${form.pdf}" target="_blank"><img src="../img/pdf.png" alt="PDF"></a>`;
-        if (form.doc) icons.innerHTML += `<a href="../files/${form.doc}" target="_blank"><img src="../img/doc.png" alt="DOC"></a>`;
-        if (form.hwp) icons.innerHTML += `<a href="../files/${form.hwp}" target="_blank"><img src="../img/hwp.png" alt="HWP"></a>`;
-        if (form.xls) icons.innerHTML += `<a href="../files/${form.xls}" target="_blank"><img src="../img/xls.png" alt="XLS"></a>`;
-
-        // 뒤로가기 링크 자동 지정
         let categoryPage = '';
         if (form.category.includes('공공')) categoryPage = 'sub-public.html';
         else if (form.category.includes('개인')) categoryPage = 'sub-personal.html';
