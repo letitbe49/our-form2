@@ -30,14 +30,12 @@
       border-bottom: 1px solid #ccc;
     }
 
-    .search-container {box-sizing: border-box;
+    .search-container {flex-wrap: wrap;
 
       display: flex;
-      max-width: 700px;
-      margin: 0 auto;
       align-items: center;
       justify-content: space-between;
-      padding: 0 12px;
+      padding: 0 30px;
     }
 
     .search-icon {
@@ -60,16 +58,13 @@
       height: 30px;
     }
 
-    .back-button {flex-shrink: 0;
+    .back-button {min-width: 36px;
 
       display: inline-block;
     }
 
     .card {
       background: #fff;
-      width: 90%;
-      max-width: 700px;
-      margin: 0 auto;
       border: 2px solid #ddd;
       border-left: 6px solid #1976d2;
       border-radius: 10px;
