@@ -16,7 +16,7 @@
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f2f2f2;
-      padding-top: 140px; /* 고정 상단 여백 */
+      padding-top: 90px; /* 고정 상단 여백 */
     }
 
     .fixed-top {
@@ -25,7 +25,7 @@
       left: 0;
       width: 100%;
       background-color: #f2f2f2;
-      padding: 0;
+      padding: 10px 0;
       z-index: 1000;
       border-bottom: 1px solid #ccc;
     }
@@ -37,7 +37,7 @@
       margin: 0 auto;
       align-items: center;
       justify-content: space-between;
-      padding: 0 16px;
+      padding: 0 12px;
     }
 
     .search-icon {
@@ -60,31 +60,23 @@
       height: 30px;
     }
 
-    .back-button {
+    .back-button {flex-shrink: 0;
+
       display: inline-block;
     }
 
     .card {
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 25px auto;
-  background: #fff;
-  border: 2px solid #ddd;
-  border-left: 6px solid #1976d2;
-  border-radius: 10px;
-  padding: 0 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  word-break: break-word;
-  overflow-wrap: break-word;
-  box-sizing: border-box;
-}
-
-#cardList {
-  max-width: 700px;
-  padding: 0 16px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
+      background: #fff;
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto;
+      border: 2px solid #ddd;
+      border-left: 6px solid #1976d2;
+      border-radius: 10px;
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
 
     .card h3 {
       font-size: 20px;
