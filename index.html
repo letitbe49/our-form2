@@ -2,11 +2,99 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>아워폼 Our Form - 우리의 양식 / 모두의 서식</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 30px; }
-    .category-btn { margin: 10px; padding: 30px 60px; font-size: 20px; cursor: pointer; }
-    .icon-links img { width: 60px; margin: 10px; }
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .category-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .category-btn {
+      flex: 1 1 250px; /* 최소 너비 250px로 자동 배치 */
+      padding: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      min-width: 250px;
+      max-width: 300px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .category-btn:hover {
+      background-color: #e0e0e0;
+    }
+
+    .icon-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .icon-links img {
+      width: 60px;
+      height: auto;
+    }
+
+    /* 모바일 전용 */
+    @media (max-width: 600px) {
+      .category-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-btn {
+        width: 90%;
+        max-width: 100%;
+        font-size: 1rem;
+        height: 80px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -15,15 +103,12 @@
   <h2>우리의 양식 / 모두의 서식</h2>
   <p>공공기관관련 민원 서식 / 일반 서식 / 외국인(foreigner) 전용 서식 모두 한 곳에!</p>
 
-  <div>
+  <div class="category-container">
     <button class="category-btn" onclick="location.href='public-list.html'">공공기관 관련서식</button>
     <button class="category-btn" onclick="location.href='personal-list.html'">일반서식(계약,법률,여권,생활등)</button>
     <button class="category-btn" onclick="location.href='global-list.html'">외국인(foreigner) 전용서식</button>
   </div>
 
-
-
-  
   <div class="icon-links">
     <a href="#"><img src="stamp-icon.png" alt="온라인 도장"></a>
     <a href="#"><img src="fax-icon.png" alt="모바일 팩스"></a>
