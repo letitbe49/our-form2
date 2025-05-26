@@ -2,88 +2,125 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>외국인서식 4</title>
+  <title>sub-global4.html</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    .doc-box { border: 1px solid #ccc; padding: 16px; margin-bottom: 16px; border-radius: 8px; }
-    .doc-title { font-size: 25px; margin-bottom: 8px; font-weight: bold; }
-    .doc-icons img { margin-right: 8px; vertical-align: middle; }
-    .category-title { font-size: 20px; font-weight: bold; color: #333; margin-top: 30px; }
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 17px;
+      margin-bottom: 30px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #ddd;
+      border-left: 6px solid #1976d2;
+      border-radius: 10px;
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 10px;
+      color: #0d47a1;
+    }
+    .card p {
+      margin: 4px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .icons {
+      margin-top: 10px;
+    }
+    .icons img {
+      width: 42px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
 
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-1">
-      <div class="doc-title">83-1 - 통합 신청서(1)</div>
-    </a>
-    <p>설명: 合併申請表</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
+  <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+
+  <div id="cardList">
+    
+    <div class="card">
+      <h3>83-1 - 통합 신청서(1)</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 合併申請表</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1qX6KmMmvAnXBHmuOy-9vehkQQgW4wScf" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1FUJOZ8MuZiOZCsiRf3os0hUCDnznna2f" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-2 - 통합 신청서(2)</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 合并申请表</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1tTeLDqqXBwFnV-GjlbM2vs55rwLhT5Hm" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1FpjM1zkOZx20FLzmz_HBCO0JUlHL5uta" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-3 - 체류지 변경신고서(출입국관리법 시행규칙)[중국]</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 居住地变更申报表</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1lrgp4Mvc5JdLAEb86KTIwTdfA2Oe-rfq" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1j8a_dq6K4GcvM_uyArF35FKxt8bZUGQV" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-4 - 운전경력증명서 발급 신청서</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 申请签发驾驶经验证明书</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=18q195ocswmL2EHiSyYzzDyviwGeP9t-h" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-5 - 운전면허 정기(수시)적성검사 제1종 대형,특수,소형 신청서</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 驾驶执照定期（定期）能力倾向测验第1类大型、特殊、小型申请书</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=11JFy3kjDHlXXN-u1Mqi4mqO0ubGZIZ-T" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-6 - 운전면허 정기(수시)적성검사 제1종 보통, 제2종 신청서</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 驾驶执照定期（定期）能力倾向测验第1类普通、第2类申请书</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=18Xx8jPm1lROoGeyo4cXczpwrd2GDZoxQ" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-7 - 자동차운전면허증 갱신, 자동차운전면허증 재발급, 영문ㆍ국제ㆍ모바일운전면허증 발급, 운전면허증갱신발급(적성검사)연기) 신청서</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 申请更新驾驶执照、补发驾驶执照、签发英文/国际/移动驾驶执照、延期更新驾驶执照（适应性测试）</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1HoQ11M68XInrQ3mCfHbHRjqK1PX9u-SV" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
+    <div class="card">
+      <h3>83-8 - 정보공개 청구서</h3>
+      <p><strong>분류:</strong> 중국어(中国人)</p>
+      <p><strong>설명:</strong> 信息披露索赔</p>
+      <div class="icons"><a href="https://drive.google.com/uc?id=1Tt-dxWgG9M_yX3onL4wot-XhktqQ32P7" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
+    </div>
+
   </div>
 
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-2">
-      <div class="doc-title">83-2 - 통합 신청서(2)</div>
-    </a>
-    <p>설명: 合并申请表</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
-  </div>
+  <script>
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
 
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-3">
-      <div class="doc-title">83-3 - 체류지 변경신고서(출입국관리법 시행규칙)[중국]</div>
-    </a>
-    <p>설명: 居住地变更申报表</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'><img src='../img/hwp.png' width='40' alt='HWP'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-4">
-      <div class="doc-title">83-4 - 운전경력증명서 발급 신청서</div>
-    </a>
-    <p>설명: 申请签发驾驶经验证明书</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-5">
-      <div class="doc-title">83-5 - 운전면허 정기(수시)적성검사 제1종 대형,특수,소형 신청서</div>
-    </a>
-    <p>설명: 驾驶执照定期（定期）能力倾向测验第1类大型、特殊、小型申请书</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-6">
-      <div class="doc-title">83-6 - 운전면허 정기(수시)적성검사 제1종 보통, 제2종 신청서</div>
-    </a>
-    <p>설명: 驾驶执照定期（定期）能力倾向测验第1类普通、第2类申请书</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-7">
-      <div class="doc-title">83-7 - 자동차운전면허증 갱신, 자동차운전면허증 재발급, 영문ㆍ국제ㆍ모바일운전면허증 발급, 운전면허증갱신발급(적성검사)연기) 신청서</div>
-    </a>
-    <p>설명: 申请更新驾驶执照、补发驾驶执照、签发英文/国际/移动驾驶执照、延期更新驾驶执照（适应性测试）</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-
-  <div class="doc-box">
-    <div class="category-title">중국어(中国人)</div>
-    <a href="form-detail.html?id=sub-global6-8">
-      <div class="doc-title">83-8 - 정보공개 청구서</div>
-    </a>
-    <p>설명: 信息披露索赔</p>
-    <div class="doc-icons"><img src='../img/pdf.png' width='40' alt='PDF'></div>
-  </div>
-  <p><a href="../global-list.html">← 목록으로 돌아가기</a></p>
 </body>
 </html>
