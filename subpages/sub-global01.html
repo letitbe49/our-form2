@@ -9,11 +9,20 @@
       padding: 30px;
       background-color: #f2f2f2;
     }
-    input[type="text"] {
-      width: 100%;
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .search-box img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .search-box input {
+      flex: 1;
       padding: 14px;
       font-size: 17px;
-      margin-bottom: 30px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
@@ -30,6 +39,10 @@
       font-size: 20px;
       font-weight: bold;
       margin: 0 0 10px;
+      color: #0d47a1;
+    }
+    .card h3 a {
+      text-decoration: none;
       color: #0d47a1;
     }
     .card p {
@@ -49,103 +62,106 @@
 </head>
 <body>
 
-  <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  <div class="search-box">
+    <img src="../img/glass_14873917.png" alt="검색">
+    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  </div>
 
   <div id="cardList">
     
     <div class="card">
-      <h3>8-1 - 영문이력서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-1">8-1 - 영문이력서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> English resume</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1OTve6UuJpo1qkoBN8j5_RlIpOgvbz9OK" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-2 - 외국인전용_계약서 표준 근로계약서(일반)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-2">8-2 - 외국인전용_계약서 표준 근로계약서(일반)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Standard employment contract</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1rZgqxdDEkaDEKBCOiWzFUM8aYO4Ny4k5" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1orJRLXA17jtkTMZCni_o__ik4WQyqnfe" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-3 - 외국인전용_계약서 표준 근로계약서(농업,축산업,어업)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-3">8-3 - 외국인전용_계약서 표준 근로계약서(농업,축산업,어업)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Standard employment contract(Agriculture, livestock farming, fishing)</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1VhffQYoNCMgdV0ThVjbyiQISPknmMFw-" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1b14BBKIYEtR8Gq6RcRqmZF-fG3JOkoRB" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-4 - 입국신고서(출입국관리법 시행규칙)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-4">8-4 - 입국신고서(출입국관리법 시행규칙)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Entry report</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1c9cw8EkQVzTT1zPERjhD6bimGE3ENZci" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1JSuQka11mARNtpraqxX2-7vRv1oo5OuY" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-5 - 출국신고서 (외국인용)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-5">8-5 - 출국신고서 (외국인용)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Departure Declaration Form</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1-ze46kwDlmtx6zcwOtF8MRAq1yrEiEKp" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1EnvigRBXpY0H2hWpWAopJ8ryj7Y1e977" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-6 - 출입국신고서(국민용)(출입국관리법 시행규칙)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-6">8-6 - 출입국신고서(국민용)(출입국관리법 시행규칙)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Immigration Declaration Form (for citizens)</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1M1A4VsVPEqssnkpqpanjGVsr1VXDvZSu" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1wvFavSRYG3-4mbuKR3SIZrrKupDMCEm1" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-7 - 통합신청서(외국인등록)1</h3>
+      <h3><a href="form-detail.html?id=sub-global1-7">8-7 - 통합신청서(외국인등록)1</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Integrated Application Form (Foreigner Registration)</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=14GuzyVOLCnQe8HIBg2uwb7EHdfdJtk4n" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1sQoX8A1MXSyYI_8EEaTPxBMYGaPpC9R8" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-8 - 체류지 변경신고서(출입국관리법 시행규칙)1</h3>
+      <h3><a href="form-detail.html?id=sub-global1-8">8-8 - 체류지 변경신고서(출입국관리법 시행규칙)1</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Change of Residence Notification Form</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1FzdmsDTcXdRcN-p7Bu5kRQmF27PbsalN" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1ROsrw9ED5anwdpI1KqbTF9WLDM4cMBOb" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-9 - 체류자격외활동허가신청서(통합신청서)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-9">8-9 - 체류자격외활동허가신청서(통합신청서)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Application for permission to engage in activities outside of the scope of residence</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1Tc2mefeZBuHbpfPZgoJ7v7QrK-wvEcst" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1QDTDfV5_vF7aAA_RbRgivZAtvBF5qql_" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-10 - 출입국에 관한 사실증명 CERTIFICATE OF ENTRY & DEPARTURE</h3>
+      <h3><a href="form-detail.html?id=sub-global1-10">8-10 - 출입국에 관한 사실증명 CERTIFICATE OF ENTRY & DEPARTURE</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> CERTIFICATE OF ENTRY & DEPARTURE</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1JriPmLHDolsbmAOMOrPKJsaCBipioZ5O" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1sC3R9dRaDoui9cV6KivebPKnzUHSQoN4" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-11 - 사실증명 발급ㆍ열람 신청서 APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT</h3>
+      <h3><a href="form-detail.html?id=sub-global1-11">8-11 - 사실증명 발급ㆍ열람 신청서 APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> APPLICATION FOR ISSUANCE OF _ ACCESS TO CERTIFICATE OF FACT</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=11uPoMCea-zEkCmOPUmxM4stXdF-04Qvi" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1yF9KUHwxJeqSosbzZc5lysy987BunmEX" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-12 - 출국기한유예신청서(출입국관리법 시행규칙)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-12">8-12 - 출국기한유예신청서(출입국관리법 시행규칙)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Application for deferment of departure deadline</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=14hvhSOkHOiLVSu6_CpKfg_fgP8GnIJ58" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=11BUy1FZkB-ni_BXnmPFhhq-Pr3ZcRfl-" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-13 - 개인정보 수집·이용에 대한 동의서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-13">8-13 - 개인정보 수집·이용에 대한 동의서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Consent to collection and use of personal information</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1d-Qd_lH9Rq8IfdAjMjPZTNchGQZivQz8" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1MukZW5QkaKK7xBOsHZZ_nuHzMFTIORyY" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-14 - 개인정보 조회 동의서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-14">8-14 - 개인정보 조회 동의서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> 
 Personal information inquiry consent form</p>
@@ -153,28 +169,28 @@ Personal information inquiry consent form</p>
     </div>
 
     <div class="card">
-      <h3>8-15 - 외국인체류확인서 열람 또는 교부 신청서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-15">8-15 - 외국인체류확인서 열람 또는 교부 신청서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Application for viewing or issuance of foreigner residence confirmation certificate</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1RT5xbNFNrkRSL29B6IcFjpmQgTgME3-N" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1EhePtG90B-65i8juIAGzxExBZam4iQ9S" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-16 - 자기소개서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-16">8-16 - 자기소개서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> self-introduction</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1bDqc4xhHdUh0fHbIVD8Er7UDdAbtJWzP" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1lptbEs_z4AzU6ZX9hP6-jYGf6u1JSQAS" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-17 - 응시원서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-17">8-17 - 응시원서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> application form</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1rme9mFjs05pU76CCob5zvc6pVMWL4POf" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1CAr95z183_pGCYbuTTJ4I2wDOW5LWPaO" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-18 - 외국인_건강보험_가입제외_신청서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-18">8-18 - 외국인_건강보험_가입제외_신청서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> 
 Foreigner_Health_Insurance_Exclusion_Application_Form</p>
@@ -182,7 +198,7 @@ Foreigner_Health_Insurance_Exclusion_Application_Form</p>
     </div>
 
     <div class="card">
-      <h3>8-19 - 신원진술서(KOR)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-19">8-19 - 신원진술서(KOR)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Identity Statement (KOR)
 </p>
@@ -190,21 +206,21 @@ Foreigner_Health_Insurance_Exclusion_Application_Form</p>
     </div>
 
     <div class="card">
-      <h3>8-20 - 신원진술서(ENG)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-20">8-20 - 신원진술서(ENG)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Identity Statement (ENG)</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1PfaqmI4N-5-bQm8zI0RjU1vWU3tTf6mH" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-21 - 외국인 대상자 제출 서류 안내</h3>
+      <h3><a href="form-detail.html?id=sub-global1-21">8-21 - 외국인 대상자 제출 서류 안내</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Documents to be submitted by foreign nationals</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1xKd4l28tvp6pgxZ9LABhkGGdEjSut61O" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1lLoyKRahJAMWYS_OjJgjLqmcJXGxNULg" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-22 - 분실물 신고서(영문)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-22">8-22 - 분실물 신고서(영문)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Lost and Found Report (English)
 </p>
@@ -212,14 +228,14 @@ Foreigner_Health_Insurance_Exclusion_Application_Form</p>
     </div>
 
     <div class="card">
-      <h3>8-23 - 외국인근로자_장기요양보험_가입제외_신청서(ENG)</h3>
+      <h3><a href="form-detail.html?id=sub-global1-23">8-23 - 외국인근로자_장기요양보험_가입제외_신청서(ENG)</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Foreign Workers_Long-term Care Insurance_Exclusion_Application Form (ENG)</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1vGROY_9pxszfkoa7IUyUg0lh1sVcW9mk" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1nRC9RK5d3QJj7FoihSYqhvltcJ4qGyP-" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>8-24 - 재외국민_및_외국인_건강보험_가입제외_신청서</h3>
+      <h3><a href="form-detail.html?id=sub-global1-24">8-24 - 재외국민_및_외국인_건강보험_가입제외_신청서</a></h3>
       <p><strong>분류:</strong> 공통</p>
       <p><strong>설명:</strong> Application for Exclusion from Health Insurance for Overseas Koreans and Foreigners</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1hRtaS5l2BMeuVRfDeEJh3hyZ3aP3pc_2" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1iZBz1vhatbCiR4r3_YvmNdEjGew-yOJe" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
