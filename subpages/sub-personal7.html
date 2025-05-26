@@ -9,11 +9,20 @@
       padding: 30px;
       background-color: #f2f2f2;
     }
-    input[type="text"] {
-      width: 100%;
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .search-box img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .search-box input {
+      flex: 1;
       padding: 14px;
       font-size: 17px;
-      margin-bottom: 30px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
@@ -30,6 +39,10 @@
       font-size: 20px;
       font-weight: bold;
       margin: 0 0 10px;
+      color: #0d47a1;
+    }
+    .card h3 a {
+      text-decoration: none;
       color: #0d47a1;
     }
     .card p {
@@ -49,12 +62,15 @@
 </head>
 <body>
 
-  <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  <div class="search-box">
+    <img src="../img/glass_14873917.png" alt="검색">
+    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  </div>
 
   <div id="cardList">
     
     <div class="card">
-      <h3>12-1 - 무상거주사실확인서</h3>
+      <h3><a href="form-detail.html?id=sub-personal7-1">12-1 - 무상거주사실확인서</a></h3>
       <p><strong>분류:</strong> 기타서식</p>
       <p><strong>설명:</strong> 무상거주사실에 대한 확인 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=10Xmmij4H26rg3Mk0BLmpRRdXP7Gdd-cf" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1MFRIwx1ylhHtKXu4HFC53D53Jh5MQykk" target="_blank"><img src="../img/doc.png" alt="DOC"></a></div>
