@@ -9,11 +9,20 @@
       padding: 30px;
       background-color: #f2f2f2;
     }
-    input[type="text"] {
-      width: 100%;
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .search-box img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .search-box input {
+      flex: 1;
       padding: 14px;
       font-size: 17px;
-      margin-bottom: 30px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
@@ -30,6 +39,10 @@
       font-size: 20px;
       font-weight: bold;
       margin: 0 0 10px;
+      color: #0d47a1;
+    }
+    .card h3 a {
+      text-decoration: none;
       color: #0d47a1;
     }
     .card p {
@@ -49,89 +62,92 @@
 </head>
 <body>
 
-  <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  <div class="search-box">
+    <img src="../img/glass_14873917.png" alt="검색">
+    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  </div>
 
   <div id="cardList">
     
     <div class="card">
-      <h3>4-0 - 위임장(어디서나 민원처리제 운영지침)</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-1">4-0 - 위임장(어디서나 민원처리제 운영지침)</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 어디서나 민원처리제 운영지침</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1dfqCLR-eCyuTJp5ioF_nvLJd1WWE8Grb" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1pG8SklI8b-5E_k77RLxZe4yKLPnT6BfG" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-1 - 가족관계등록창설신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-2">4-1 - 가족관계등록창설신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 가족관계등록에 관한 창설 신고양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1xpMW_F6JbUMZoTAxRk7ACpd0FZtxEBW-" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1uG8V1hdRa-cEqx7XTU_l3z2T38tXZRjI" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-2 - 혼인신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-3">4-2 - 혼인신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 혼인을 위한 신고 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1DeSsSZ-V27VOOaOVsqN1W1iTARNHxSYB" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1HZ0UDQBIKecHqhUJoukR0kfQrnYvJaEq" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-3 - 혼인취소신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-4">4-3 - 혼인취소신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 혼인의 취소를 위한 신고 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1bNqkojpzmhHh3qRq_wDEimqx8DyXRigs" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1qxH9pH5Ny9hvZOeRlXHzyEskvwOaaea9" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-4 - 이혼(친권자지정)신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-5">4-4 - 이혼(친권자지정)신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 혼인자 간의 이혼과 친권자지정에 관한 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1ZessVTqIuChGAkx1xHqDxb0wo6Zo8f9e" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1BRYLGotGDfpG6FZ5RXBWJyh10yRnwO63" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-5 - 입양신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-6">4-5 - 입양신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 입양을 위한 신고양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1n0FVUEmNp1RakTvAQe1UVnT6MkULKB8q" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1lucKybKae98oHD4EbQ_psqufmenDLH7t" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-6 - 개명신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-7">4-6 - 개명신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 개명(이름 바꿈)에 관한 신고양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1LBS8o23hG87fKFEtwnfKNBsb7Ui4n759" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=117h70HceJGtspKyt6XiFjGBnn7ssksew" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-7 - 사망신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-8">4-7 - 사망신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 사망에 관한 신고양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1X6Hpx0XcOz7Sj4bYdJ1TgXNxfOIQuOzw" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=15JhAQjjbpz2cPf0YTErsAD_zR-dKb0aN" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-8 - 국적취득신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-9">4-8 - 국적취득신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 국적취득에 관한 신고 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1dkdSjCJP9k3Kc3HSZrWzFS_idXGiq4F_" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1iqXje2wSZzTsXOsdi4AU4OGg3pHVYSUB" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-9 - 귀화신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-10">4-9 - 귀화신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 귀하에 대한 신고 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=13n4WdbbT6Y8Mcgw8fWPoZGD8Qnj2IMuI" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=14Z7WBmdwbUW-VG2Sxtu_ZfE3_e9pQUtf" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-10 - 출생신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-11">4-10 - 출생신고서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> 출생에 대한 신고 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1BX4yT3F_HAm5pJUW5LXE097ezWXnvQoe" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1BTb7OcaAFLTf3YEB92uOOFV_9DHc0sJn" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>4-11 - 가족관계 영문증명서 발급신청서</h3>
+      <h3><a href="form-detail.html?id=sub-personal3-12">4-11 - 가족관계 영문증명서 발급신청서</a></h3>
       <p><strong>분류:</strong> 가족관계 민원 서식</p>
       <p><strong>설명:</strong> Application for issuance of family relationship certificate in English</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1fx-XZ0MnTBbe7OLyVt_3tIpQCt_TLMI6" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1irn0TC7sqlsahcvTVd-iijR6O9O9hHEl" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
