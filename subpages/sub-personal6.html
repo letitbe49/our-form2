@@ -2,8 +2,19 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>sub-personal6.html</title>
+  <title>sub-global1.html</title>
   <style>
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      min-height: 100%;
+      overflow-y: scroll;
+    }
+
+    
+    
     body {
       font-family: 'Arial', sans-serif;
       padding: 30px;
@@ -67,13 +78,53 @@
       margin-right: 10px;
       vertical-align: middle;
     }
-  </style>
+  
+    .fixed-top {
+      position: sticky;
+      top: 0;
+      background-color: #f2f2f2;
+      padding: 10px 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+    }
+    .search-icon {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    #searchInput {
+      flex: 1;
+      padding: 14px;
+      font-size: 17px;
+      margin: 0 20px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+    }
+    .back-icon {
+      width: 30px;
+      height: 30px;
+    }
+    .back-button {
+      display: inline-block;
+    }
+    </style>
 </head>
 <body>
 
-  <div class="search-box">
-    <img src="../img/glass_14873917.png" alt="검색">
-    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  <div class="fixed-top">
+    <div class="search-container">
+      <img src="../img/glass_14873917.png" alt="검색" class="search-icon">
+      <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+      <a href="../index.html" class="back-button">
+        <img src="../img/back_12231706.png" alt="돌아가기" class="back-icon">
+      </a>
+    </div>
   </div>
 
   <div id="cardList">
