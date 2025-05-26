@@ -9,11 +9,20 @@
       padding: 30px;
       background-color: #f2f2f2;
     }
-    input[type="text"] {
-      width: 100%;
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .search-box img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .search-box input {
+      flex: 1;
       padding: 14px;
       font-size: 17px;
-      margin-bottom: 30px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
@@ -30,6 +39,10 @@
       font-size: 20px;
       font-weight: bold;
       margin: 0 0 10px;
+      color: #0d47a1;
+    }
+    .card h3 a {
+      text-decoration: none;
       color: #0d47a1;
     }
     .card p {
@@ -49,40 +62,43 @@
 </head>
 <body>
 
-  <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  <div class="search-box">
+    <img src="../img/glass_14873917.png" alt="검색">
+    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  </div>
 
   <div id="cardList">
     
     <div class="card">
-      <h3>5-1 - 여권발급 신청서</h3>
+      <h3><a href="form-detail.html?id=sub-personal4-1">5-1 - 여권발급 신청서</a></h3>
       <p><strong>분류:</strong> 여권사무 서식</p>
       <p><strong>설명:</strong> 여권발급을 위한 신청 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=11lCwUp4ynexTWHXczejgmQqE71vEHqlf" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
     </div>
 
     <div class="card">
-      <h3>5-2 - 여권발급 위임장</h3>
+      <h3><a href="form-detail.html?id=sub-personal4-2">5-2 - 여권발급 위임장</a></h3>
       <p><strong>분류:</strong> 여권사무 서식</p>
       <p><strong>설명:</strong> 여권발급신청에 대한 위임장</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1nekEJI8evoiCy4QmNyUuN0XChwjRNpxs" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
     </div>
 
     <div class="card">
-      <h3>5-3 - 여권발급 법정대리인동의서</h3>
+      <h3><a href="form-detail.html?id=sub-personal4-3">5-3 - 여권발급 법정대리인동의서</a></h3>
       <p><strong>분류:</strong> 여권사무 서식</p>
       <p><strong>설명:</strong> 여권발급신청에 대한 법정대리인 동의서 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1ciyXJUuUTkoWOPC7lrFJu-XOGwhmL_a6" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
     </div>
 
     <div class="card">
-      <h3>5-4 - 여권 분실 신고서</h3>
+      <h3><a href="form-detail.html?id=sub-personal4-4">5-4 - 여권 분실 신고서</a></h3>
       <p><strong>분류:</strong> 여권사무 서식</p>
       <p><strong>설명:</strong> 여권분실에 관한 신고 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=10iTm193C13bFRxvlwCIc6qcR12WaOgYr" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
     </div>
 
     <div class="card">
-      <h3>5-5 - 여권 사실증명 신청서</h3>
+      <h3><a href="form-detail.html?id=sub-personal4-5">5-5 - 여권 사실증명 신청서</a></h3>
       <p><strong>분류:</strong> 여권사무 서식</p>
       <p><strong>설명:</strong> 여권사실에 관한 증명을 위한 신청 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1lB_Rm8eMTLSwFyq0F_-7Ymp3Cc938RCe" target="_blank"><img src="../img/pdf.png" alt="PDF"></a></div>
