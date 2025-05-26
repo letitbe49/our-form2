@@ -9,11 +9,20 @@
       padding: 30px;
       background-color: #f2f2f2;
     }
-    input[type="text"] {
-      width: 100%;
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .search-box img {
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+    }
+    .search-box input {
+      flex: 1;
       padding: 14px;
       font-size: 17px;
-      margin-bottom: 30px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
@@ -30,6 +39,10 @@
       font-size: 20px;
       font-weight: bold;
       margin: 0 0 10px;
+      color: #0d47a1;
+    }
+    .card h3 a {
+      text-decoration: none;
       color: #0d47a1;
     }
     .card p {
@@ -49,75 +62,78 @@
 </head>
 <body>
 
-  <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  <div class="search-box">
+    <img src="../img/glass_14873917.png" alt="검색">
+    <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+  </div>
 
   <div id="cardList">
     
     <div class="card">
-      <h3>2-1 - 입사지원서</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-1">2-1 - 입사지원서</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 입사를 위한 지원서 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1h7GTh2mnI7LwI673jC6HrkniKjqtx4qL" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1hU_7uM9tkgSHel4lXNoyE5FlWa_OIciG" target="_blank"><img src="../img/doc.png" alt="DOC"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-2 - 자기소개서</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-2">2-2 - 자기소개서</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 입사지원서와 함께 작성되는 자기소개서 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1B_EPPlEgq19f6KSd8ZIsqRyBlDpvZjlm" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=18__dr39UX45BvJUkm7xWmf3vEMv-ST2-" target="_blank"><img src="../img/doc.png" alt="DOC"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-3 - 견적서양식(일반)</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-3">2-3 - 견적서양식(일반)</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 일반 견적서의 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1ilnQPOGsdpDL-fdjToMY9ObVlOE9eeQU" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1nj8UmmsoVUD4g3qj1NK4S1ENYixBQCPQ" target="_blank"><img src="../img/xls.png" alt="XLS"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-4 - 건설공사표준도급계약서</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-4">2-4 - 건설공사표준도급계약서</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 건설공사의 하도급에 관한 표준계약서</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1Z-K9VhktlgL3blyg-WrouoszWYDiF7_b" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1ovdUu_ilORrsQ8ompbyiAoHkrdGSbWd-" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-5 - 퇴직서(일반)</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-5">2-5 - 퇴직서(일반)</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 퇴직에 대한 일반 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=19pzBo2vIbY5Ix2QmXEOOPH1EaoqzZOBd" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=17DeXS6Hhw9-N6x-6S6fuFKTefYsbGZWh" target="_blank"><img src="../img/doc.png" alt="DOC"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-6 - 사직서 양식</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-6">2-6 - 사직서 양식</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 사직에 관한 일반 양식</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1Zm-_QQs9g5rLbD9M8Wu8BcGkTmMYLxOv" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1UO8dQxjQItmHWviunGg1_NbpHkoPFohg" target="_blank"><img src="../img/hwp.png" alt="HWP"></a><a href="https://drive.google.com/uc?id=1ezkJxKQQCnjnOCDqwadqTloo6r-7JEJk" target="_blank"><img src="../img/doc.png" alt="DOC"></a><a href="https://drive.google.com/uc?id=1Tu2oCTSoqZJd-knZ7qLI8AlQ0RjCijEi" target="_blank"><img src="../img/xls.png" alt="XLS"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-7 - 개인정보+수집∙이용+및+제3자+제공동의서</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-7">2-7 - 개인정보+수집∙이용+및+제3자+제공동의서</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 개인정보수집,이용,제3자의 제공에 관한 동의서</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1Bw1Hyo_tDd-X_oZagf5j57YQM7XjaWx9" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1IcOPDEev_5JzzLozZR7ZFgHlsh9F3qbA" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-8 - 이력서 양식(1)</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-8">2-8 - 이력서 양식(1)</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 입사를 위해 이력을 나열하는 양삭</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=10m6gqT3-NyjJjyuVhVysl2Lx2EuE4kA1" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1OeT_W9fgT-n9l08ztts8NQ13xQlKpl6f" target="_blank"><img src="../img/doc.png" alt="DOC"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-9 - 이력서 자기소개서 양식(2)</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-9">2-9 - 이력서 자기소개서 양식(2)</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 입사를 위해 이력을 나열하는 양삭+자기소개서</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1mVcJH42G_pYifDKiLUXkeFQxzGoanqup" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1BVrAd-OPbftslgEWAjZ4PB29EpatC7tv" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
     </div>
 
     <div class="card">
-      <h3>2-10 - 이력서 자기소개서 양식(3)</h3>
+      <h3><a href="form-detail.html?id=sub-personal2-10">2-10 - 이력서 자기소개서 양식(3)</a></h3>
       <p><strong>분류:</strong> 신청서, 제출서류</p>
       <p><strong>설명:</strong> 입사를 위해 이력을 나열하는 양삭+자기소개서</p>
       <div class="icons"><a href="https://drive.google.com/uc?id=1d8V13HcXI_ll3MWOv7rqFo73DFdn8Cp4" target="_blank"><img src="../img/pdf.png" alt="PDF"></a><a href="https://drive.google.com/uc?id=1xL5n3buZT_-hX_28P-U4oGlBM0vjQddA" target="_blank"><img src="../img/hwp.png" alt="HWP"></a></div>
