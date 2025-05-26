@@ -4,39 +4,61 @@
   <meta charset="UTF-8">
   <title>sub-personal6.html</title>
   <style>
-
     html, body {
       margin: 0;
       padding: 0;
       height: auto;
       min-height: 100%;
-      overflow-y: scroll;
     }
 
-    
-    
     body {
       font-family: 'Arial', sans-serif;
-      padding: 30px;
       background-color: #f2f2f2;
+      padding-top: 90px; /* 고정 상단 여백 */
     }
-    .search-box {
+
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 10px 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .search-container {
       display: flex;
       align-items: center;
-      margin-bottom: 30px;
+      justify-content: space-between;
+      padding: 0 30px;
     }
-    .search-box img {
+
+    .search-icon {
       width: 26px;
       height: 26px;
       margin-right: 10px;
     }
-    .search-box input {
+
+    #searchInput {
       flex: 1;
       padding: 14px;
       font-size: 17px;
+      margin: 0 20px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
+
+    .back-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .back-button {
+      display: inline-block;
+    }
+
     .card {
       background: #fff;
       border: 2px solid #ddd;
@@ -46,74 +68,41 @@
       margin-bottom: 25px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
+
     .card h3 {
       font-size: 20px;
       font-weight: bold;
       margin: 0 0 10px;
       color: #0d47a1;
     }
+
     .card h3 a {
       text-decoration: none;
       color: #0d47a1;
       font-size: 20px;
       font-weight: bold;
     }
+
     .card h3 a:hover {
       text-decoration: underline;
     }
-    .card h3 a {
-      text-decoration: none;
-      color: #0d47a1;
-    }
+
     .card p {
       margin: 4px 0;
       font-size: 16px;
       color: #333;
     }
+
     .icons {
       margin-top: 10px;
     }
+
     .icons img {
       width: 42px;
       margin-right: 10px;
       vertical-align: middle;
     }
-  
-    .fixed-top {
-      position: sticky;
-      top: 0;
-      background-color: #f2f2f2;
-      padding: 10px 0;
-      z-index: 1000;
-      border-bottom: 1px solid #ccc;
-    }
-    .search-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 30px;
-    }
-    .search-icon {
-      width: 26px;
-      height: 26px;
-      margin-right: 10px;
-    }
-    #searchInput {
-      flex: 1;
-      padding: 14px;
-      font-size: 17px;
-      margin: 0 20px;
-      border: 2px solid #bbb;
-      border-radius: 6px;
-    }
-    .back-icon {
-      width: 30px;
-      height: 30px;
-    }
-    .back-button {
-      display: inline-block;
-    }
-    </style>
+  </style>
 </head>
 <body>
 
