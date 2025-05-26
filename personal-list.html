@@ -1,30 +1,115 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>일반서식(계약,법률,여권,생활등)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>일반서식(계약,법률,여권,생활등)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-button {
-    font-size: 20px;
-    padding: 16px 32px;
-    margin: 8px;
-    border-radius: 8px;
-}
-</style>
-    
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+      margin: 0;
+      background-image: url("img/빈문서 책상(파란배경).jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #000;
+    }
+
+    .content-wrapper {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .category-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .category-btn {
+      width: 90%;
+      max-width: 320px;
+      min-height: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      padding: 12px;
+      background-color: #5f87d1; /* 밝은 파란색 */
+      border: none;
+      border-radius: 8px;
+      word-break: keep-word;
+      white-space: normal;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      transition: background-color 0.2s ease;
+    }
+
+    .category-btn:hover {
+      background-color: #4c73be;
+    }
+
+    .back-link {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 601px) {
+      .category-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .category-btn {
+        height: 60px;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <div class="content-wrapper">
     <h1>일반서식(계약,법률,여권,생활등)</h1>
-<p>필요한 서식을 선택하세요</p>
-<a href="subpages/sub-personal1.html"><button> 계약서 각종 양식</button></a>
-<a href="subpages/sub-personal2.html"><button>신청서/제출서류</button></a>
-<a href="subpages/sub-personal3.html"><button>가족관계 민원 서식</button></a>
-<a href="subpages/sub-personal4.html"><button>여권사무 관련 서식</button></a>
-<a href="subpages/sub-personal5.html"><button>내용증명/법률서식</button></a>
-<a href="subpages/sub-personal6.html"><button>생활 문서</button></a>
-<a href="subpages/sub-personal7.html"><button>기타 문서 서식</button></a>
-<p><a href="index.html">← 메인으로 돌아가기</a></p>
+    <p>필요한 서식을 선택하세요</p>
+
+    <div class="category-container">
+      <a class="category-btn" href="subpages/sub-personal1.html">계약서 각종 양식</a>
+      <a class="category-btn" href="subpages/sub-personal2.html">신청서/제출서류</a>
+      <a class="category-btn" href="subpages/sub-personal3.html">가족관계 민원 서식</a>
+      <a class="category-btn" href="subpages/sub-personal4.html">여권사무 관련 서식</a>
+      <a class="category-btn" href="subpages/sub-personal5.html">내용증명/법률서식</a>
+      <a class="category-btn" href="subpages/sub-personal6.html">생활 문서</a>
+      <a class="category-btn" href="subpages/sub-personal7.html">기타 문서 서식</a>
+    </div>
+
+    <p class="back-link"><a href="index.html">← 메인으로 돌아가기</a></p>
+  </div>
 
 </body>
 </html>
