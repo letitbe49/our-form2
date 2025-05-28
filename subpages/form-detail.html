@@ -125,7 +125,7 @@
   const jsonName = params.get("json");
   const code = params.get("id");
 
-  // 뒤로가기 링크 자동 설정
+  // ✅ 목록으로 돌아가기 경로 수정 (../subpages/)
   const backMap = {
     "sub-global": "sub-global01.html",
     "sub-public": "sub-public01.html",
@@ -133,13 +133,13 @@
   };
   const baseJson = jsonName ? jsonName.replace(/[0-9]/g, '') : '';
   const backHref = backMap[baseJson] || "index.html";
-  document.getElementById("backLink").href = `subpages/${backHref}`;
+  document.getElementById("backLink").href = `../subpages/${backHref}`;
 
   if (!jsonName || !code) {
     document.getElementById("title").textContent = "잘못된 접근입니다.";
     document.getElementById("description").textContent = "-";
   } else {
-    // ✅ 경로 수정: ../data/
+    // ✅ JSON 상대경로 수정
     fetch(`../data/${jsonName}.json`)
       .then(response => response.json())
       .then(data => {
@@ -154,18 +154,20 @@
         document.getElementById("category").textContent = found.category;
         document.getElementById("description").textContent = found.description || "-";
 
+        // ✅ 아이콘 경로 수정 (../img/)
         const icons = {
-          pdf: { src: "img/pdf.png", alt: "PDF 다운로드" },
-          xls: { src: "img/xls.png", alt: "XLS 다운로드" },
-          doc: { src: "img/doc.png", alt: "DOC 다운로드" },
-          hwp: { src: "img/hwp.png", alt: "HWP 다운로드" }
+          pdf: { src: "../img/pdf.png", alt: "PDF 다운로드" },
+          xls: { src: "../img/xls.png", alt: "XLS 다운로드" },
+          doc: { src: "../img/doc.png", alt: "DOC 다운로드" },
+          hwp: { src: "../img/hwp.png", alt: "HWP 다운로드" }
         };
 
         const container = document.getElementById("downloadArea");
         for (const type in icons) {
           const file = found[type];
-          if (file && file !== "nan") {
-            const link = file.startsWith("http") ? file : `files/${file}`;
+          // ✅ "nan", null, 빈 문자열 걸러내기
+          if (file && file !== "nan" && file !== "null" && file.trim() !== "") {
+            const link = file.startsWith("http") ? file : `../files/${file}`;
             const a = document.createElement("a");
             a.href = link;
             a.target = "_blank";
