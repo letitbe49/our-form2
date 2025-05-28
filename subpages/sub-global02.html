@@ -2,7 +2,9 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>sub-global2.html</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>sub-global1.html</title>
   <style>
     html, body {
       margin: 0;
@@ -17,7 +19,8 @@
       padding-top: 90px; /* 고정 상단 여백 */
     }
 
-    .fixed-top {
+    .fixed-top {right: 0;
+
       position: fixed;
       top: 0;
       left: 0;
@@ -59,12 +62,13 @@
       display: inline-block;
     }
 
-    .card {
+    .card {box-sizing: border-box;
+
       background: #fff;
       border: 2px solid #ddd;
       border-left: 6px solid #1976d2;
       border-radius: 10px;
-      padding: 20px 25px;
+      padding: 16px 24px;
       margin-bottom: 25px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
