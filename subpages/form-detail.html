@@ -39,7 +39,7 @@
     }
 
     .preview-box {
-      background: #fff0f0;
+      background: #ffecec;
       padding: 12px;
       border-radius: 6px;
       color: #444;
@@ -51,6 +51,11 @@
       gap: 24px;
       justify-content: center;
       margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .download-section a {
+      display: inline-block;
     }
 
     .download-section img {
@@ -89,18 +94,39 @@
     <h1>8-1 - 영문이력서</h1>
     <div class="meta">English resume<br />공통</div>
 
-    <div class="section-title">미리보기</div>
+    <div class="section-title">문서 설명</div>
     <div class="preview-box">
-      ※ 이 문서는 미리보기를 지원하지 않습니다. 아래 아이콘을 눌러 다운로드하세요.
+      영문으로 작성된 이력서 템플릿입니다. 기본적인 개인정보와 경력을 입력한 후 제출용으로 활용할 수 있습니다.
     </div>
 
     <div class="section-title">다운로드 링크</div>
-    <div class="download-section">
-      <a href="#"><img src="../img/pdf.png" alt="PDF 다운로드" /></a>
-      <a href="#"><img src="../img/xls.png" alt="XLS 다운로드" /></a>
+    <div class="download-section" id="downloadArea">
+      <!-- 동적으로 파일만 보여줌 -->
     </div>
 
     <a class="back-link" href="javascript:history.back()">← 목록으로 돌아가기</a>
   </div>
+
+  <script>
+    // 사용할 파일 유형 목록
+    const availableFiles = ["pdf", "xls"]; // 상위 문서에서 전달된 실제 존재하는 파일 확장자들
+
+    const icons = {
+      pdf: { src: "../img/pdf.png", alt: "PDF 다운로드" },
+      hwp: { src: "../img/hwp.png", alt: "HWP 다운로드" },
+      doc: { src: "../img/doc.png", alt: "DOC 다운로드" },
+      xls: { src: "../img/xls.png", alt: "XLS 다운로드" },
+    };
+
+    const container = document.getElementById("downloadArea");
+    availableFiles.forEach(type => {
+      if (icons[type]) {
+        const a = document.createElement("a");
+        a.href = "#";
+        a.innerHTML = `<img src="${icons[type].src}" alt="${icons[type].alt}" />`;
+        container.appendChild(a);
+      }
+    });
+  </script>
 </body>
 </html>
