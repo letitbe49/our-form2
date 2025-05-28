@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sub-global11.html</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      height: auto;
-      min-height: 100%;
-    }
-
-    body {
       font-family: 'Arial', sans-serif;
       background-color: #f2f2f2;
-      padding-top: 90px; /* 고정 상단 여백 */
+      background-image: url('../img/백지문서 사진.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .fixed-top {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       background-color: #f2f2f2;
       padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
       z-index: 1000;
       border-bottom: 1px solid #ccc;
     }
 
-    .search-container {
+    .fixed-inner {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    .search-wrapper {
+      width: 100%;
+    }
+
+    .search-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 30px;
+      justify-content: center;
+      gap: 6px;
     }
 
-    .search-icon {
+    .search-icon,
+    .back-icon {
       width: 26px;
       height: 26px;
-      margin-right: 10px;
-    }
-
-    #searchInput {
-      flex: 1;
-      padding: 14px;
-      font-size: 17px;
-      margin: 0 20px;
-      border: 2px solid #bbb;
-      border-radius: 6px;
+      flex-shrink: 0;
     }
 
     .back-icon {
@@ -55,18 +55,33 @@
       height: 30px;
     }
 
-    .back-button {
-      display: inline-block;
+    #searchInput {
+      flex-grow: 0.8;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+      padding-bottom: 40px;
     }
 
     .card {
+      width: 100%;
+      max-width: 280px;
       background: #fff;
       border: 2px solid #ddd;
       border-left: 6px solid #1976d2;
       border-radius: 10px;
-      padding: 20px 25px;
-      margin-bottom: 25px;
+      padding: 12px 18px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .card h3 {
@@ -74,23 +89,14 @@
       font-weight: bold;
       margin: 0 0 10px;
       color: #0d47a1;
-    }
-
-    .card h3 a {
-      text-decoration: none;
-      color: #0d47a1;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .card h3 a:hover {
-      text-decoration: underline;
+      word-break: break-word;
     }
 
     .card p {
       margin: 4px 0;
       font-size: 16px;
       color: #333;
+      word-break: break-word;
     }
 
     .icons {
@@ -98,25 +104,29 @@
     }
 
     .icons img {
-      width: 42px;
-      margin-right: 10px;
+      width: 36px;
+      margin-right: 8px;
       vertical-align: middle;
     }
   </style>
 </head>
 <body>
-
   <div class="fixed-top">
-    <div class="search-container">
-      <img src="../img/glass_14873917.png" alt="검색" class="search-icon">
-      <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
-      <a href="../global-list.html" class="back-button">
-        <img src="../img/back_12231706.png" alt="돌아가기" class="back-icon">
-      </a>
+    <div class="fixed-inner">
+      <div class="search-wrapper">
+        <div class="search-inner">
+          <img src="../img/glass_14873917.png" alt="검색" class="search-icon" />
+          <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
+          <a href="../global-list.html" class="back-button">
+            <img src="../img/back_12231706.png" alt="돌아가기" class="back-icon" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div id="cardList">
+  <div class="container">
+    <div id="cardList">
     
     <div class="card">
       <h3 class="title"><a href="form-detail.html?id=sub-global11-1">90-1 - 운전경력증명서 발급 신청서</a></h3>
