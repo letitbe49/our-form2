@@ -14,8 +14,6 @@
 
     .fixed-top {
       width: 100%;
-      display: flex;
-      justify-content: center;
       background-color: #f2f2f2;
       padding: 10px 0;
       position: fixed;
@@ -26,8 +24,8 @@
     }
 
     .fixed-inner {
-      width: 100%;
-      max-width: 300px;
+      width: 300px;
+      margin: 0 auto;
     }
 
     .search-wrapper {
@@ -37,27 +35,28 @@
     .search-inner {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 6px;
+      justify-content: center;
+      gap: 6px;
     }
 
-    .search-icon {
+    .search-icon,
+    .back-icon {
       width: 26px;
       height: 26px;
-    }
-
-    #searchInput {
-      flex: 1;
-      margin: 0 8px;
-      padding: 12px;
-      font-size: 16px;
-      border: 2px solid #bbb;
-      border-radius: 6px;
+      flex-shrink: 0;
     }
 
     .back-icon {
       width: 30px;
       height: 30px;
+    }
+
+    #searchInput {
+      flex-grow: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #bbb;
+      border-radius: 6px;
     }
 
     .container {
@@ -87,7 +86,6 @@
       margin: 0 0 10px;
       color: #0d47a1;
       word-break: break-word;
-      overflow-wrap: break-word;
     }
 
     .card p {
@@ -95,7 +93,6 @@
       font-size: 16px;
       color: #333;
       word-break: break-word;
-      overflow-wrap: break-word;
     }
 
     .icons {
@@ -106,12 +103,6 @@
       width: 36px;
       margin-right: 8px;
       vertical-align: middle;
-    }
-
-    @media (max-width: 480px) {
-      .fixed-inner {
-        padding: 0 10px;
-      }
     }
   </style>
 </head>
