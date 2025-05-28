@@ -19,7 +19,7 @@
       max-width: 360px;
       margin: 0 auto;
       padding: 24px 16px 80px;
-      background-color: rgba(255, 255, 255, 0.75); /* 더 투명하게 */
+      background-color: rgba(255, 255, 255, 0.5); /* 더 투명하게 조정 */
       border-radius: 12px;
     }
 
@@ -125,21 +125,14 @@
   const jsonName = params.get("json");
   const code = params.get("id");
 
-  // ✅ 목록으로 돌아가기 경로 수정 (../subpages/)
-  const backMap = {
-    "sub-global": "sub-global01.html",
-    "sub-public": "sub-public01.html",
-    "sub-personal": "sub-personal01.html"
-  };
-  const baseJson = jsonName ? jsonName.replace(/[0-9]/g, '') : '';
-  const backHref = backMap[baseJson] || "index.html";
+  // 목록으로 돌아가기 정확하게 처리
+  const backHref = jsonName ? `${jsonName}.html` : "index.html";
   document.getElementById("backLink").href = `../subpages/${backHref}`;
 
   if (!jsonName || !code) {
     document.getElementById("title").textContent = "잘못된 접근입니다.";
     document.getElementById("description").textContent = "-";
   } else {
-    // ✅ JSON 상대경로 수정
     fetch(`../data/${jsonName}.json`)
       .then(response => response.json())
       .then(data => {
@@ -154,7 +147,6 @@
         document.getElementById("category").textContent = found.category;
         document.getElementById("description").textContent = found.description || "-";
 
-        // ✅ 아이콘 경로 수정 (../img/)
         const icons = {
           pdf: { src: "../img/pdf.png", alt: "PDF 다운로드" },
           xls: { src: "../img/xls.png", alt: "XLS 다운로드" },
@@ -165,7 +157,6 @@
         const container = document.getElementById("downloadArea");
         for (const type in icons) {
           const file = found[type];
-          // ✅ "nan", null, 빈 문자열 걸러내기
           if (file && file !== "nan" && file !== "null" && file.trim() !== "") {
             const link = file.startsWith("http") ? file : `../files/${file}`;
             const a = document.createElement("a");
