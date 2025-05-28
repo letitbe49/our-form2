@@ -21,8 +21,8 @@
       max-width: 360px;
       margin: 0 auto;
       padding: 24px 16px 80px;
-      background-color: rgba(255, 255, 255, 0.96);
-      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.85); /* 더 투명하게 */
+      border-radius: 12px;
     }
 
     h1 {
@@ -44,19 +44,19 @@
       color: #000;
     }
 
-    .preview-box {
-      background: #ffecec;
-      padding: 12px;
-      border-radius: 6px;
-      color: #444;
-      font-size: 14px;
-    }
-
     .description-box {
       background: #eef4ff;
       padding: 12px;
       border-radius: 6px;
       color: #333;
+      font-size: 14px;
+    }
+
+    .preview-box {
+      background: #ffecec;
+      padding: 12px;
+      border-radius: 6px;
+      color: #444;
       font-size: 14px;
     }
 
@@ -107,12 +107,12 @@
 </head>
 <body>
   <div class="wrapper">
-    <h1>8-1 - 영문이력서</h1>
-    <div class="meta">English resume<br />공통</div>
+    <h1 id="title">문서 제목</h1>
+    <div class="meta" id="category">카테고리</div>
 
     <div class="section-title">문서 설명</div>
-    <div class="description-box">
-      영문으로 작성된 이력서 템플릿입니다. 해외취업 및 외국계 회사 지원 시 기본 포맷으로 사용됩니다.
+    <div class="description-box" id="description">
+      설명을 불러오는 중...
     </div>
 
     <div class="section-title">미리보기</div>
@@ -121,12 +121,46 @@
     </div>
 
     <div class="section-title">다운로드 링크</div>
-    <div class="download-section">
-      <a href="../files/sample.pdf"><img src="../img/pdf.png" alt="PDF 다운로드" /></a>
-      <a href="../files/sample.xls"><img src="../img/xls.png" alt="XLS 다운로드" /></a>
-    </div>
+    <div class="download-section" id="downloadArea"></div>
 
     <a class="back-link" href="../subpages/sub-global01.html">← 목록으로 돌아가기</a>
   </div>
+
+  <script>
+    // 예시용 데이터 (실제론 JSON에서 받아와야 함)
+    const formData = {
+      title: "8-1 - 영문이력서",
+      category: "공통",
+      description: "영문으로 작성된 이력서 템플릿입니다. 해외취업 및 외국계 회사 지원 시 기본 포맷으로 사용됩니다.",
+      files: {
+        pdf: "../files/sample.pdf",
+        xls: "../files/sample.xls",
+        doc: null,
+        hwp: null
+      }
+    };
+
+    document.getElementById("title").textContent = formData.title;
+    document.getElementById("category").textContent = formData.category;
+    document.getElementById("description").textContent = formData.description;
+
+    const icons = {
+      pdf: { src: "../img/pdf.png", alt: "PDF 다운로드" },
+      xls: { src: "../img/xls.png", alt: "XLS 다운로드" },
+      doc: { src: "../img/doc.png", alt: "DOC 다운로드" },
+      hwp: { src: "../img/hwp.png", alt: "HWP 다운로드" }
+    };
+
+    const container = document.getElementById("downloadArea");
+    Object.keys(formData.files).forEach(type => {
+      const url = formData.files[type];
+      if (url) {
+        const a = document.createElement("a");
+        a.href = url;
+        a.innerHTML = `<img src="${icons[type].src}" alt="${icons[type].alt}" />`;
+        container.appendChild(a);
+      }
+    });
+  </script>
 </body>
 </html>
