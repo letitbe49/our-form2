@@ -120,65 +120,66 @@
     <a class="back-link" id="backLink" href="#">← 목록으로 돌아가기</a>
   </div>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const jsonName = params.get("json");
-    const code = params.get("id");
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const jsonName = params.get("json");
+  const code = params.get("id");
 
-    // 뒤로가기 링크 자동 설정
-    const backMap = {
-      "sub-global": "sub-global01.html",
-      "sub-public": "sub-public01.html",
-      "sub-personal": "sub-personal01.html"
-    };
-    const baseJson = jsonName ? jsonName.replace(/[0-9]/g, '') : '';
-    const backHref = backMap[baseJson] || "index.html";
-    document.getElementById("backLink").href = `subpages/${backHref}`;
+  // 뒤로가기 링크 자동 설정
+  const backMap = {
+    "sub-global": "sub-global01.html",
+    "sub-public": "sub-public01.html",
+    "sub-personal": "sub-personal01.html"
+  };
+  const baseJson = jsonName ? jsonName.replace(/[0-9]/g, '') : '';
+  const backHref = backMap[baseJson] || "index.html";
+  document.getElementById("backLink").href = `subpages/${backHref}`;
 
-    if (!jsonName || !code) {
-      document.getElementById("title").textContent = "잘못된 접근입니다.";
-      document.getElementById("description").textContent = "-";
-    } else {
-      fetch(`data/${jsonName}.json`)
-        .then(response => response.json())
-        .then(data => {
-          const found = data.find(item => item.code === code);
-          if (!found) {
-            document.getElementById("title").textContent = "문서를 찾을 수 없습니다.";
-            document.getElementById("description").textContent = "-";
-            return;
+  if (!jsonName || !code) {
+    document.getElementById("title").textContent = "잘못된 접근입니다.";
+    document.getElementById("description").textContent = "-";
+  } else {
+    // ✅ 경로 수정: ../data/
+    fetch(`../data/${jsonName}.json`)
+      .then(response => response.json())
+      .then(data => {
+        const found = data.find(item => item.code === code);
+        if (!found) {
+          document.getElementById("title").textContent = "문서를 찾을 수 없습니다.";
+          document.getElementById("description").textContent = "-";
+          return;
+        }
+
+        document.getElementById("title").textContent = found.title;
+        document.getElementById("category").textContent = found.category;
+        document.getElementById("description").textContent = found.description || "-";
+
+        const icons = {
+          pdf: { src: "img/pdf.png", alt: "PDF 다운로드" },
+          xls: { src: "img/xls.png", alt: "XLS 다운로드" },
+          doc: { src: "img/doc.png", alt: "DOC 다운로드" },
+          hwp: { src: "img/hwp.png", alt: "HWP 다운로드" }
+        };
+
+        const container = document.getElementById("downloadArea");
+        for (const type in icons) {
+          const file = found[type];
+          if (file && file !== "nan") {
+            const link = file.startsWith("http") ? file : `files/${file}`;
+            const a = document.createElement("a");
+            a.href = link;
+            a.target = "_blank";
+            a.innerHTML = `<img src="${icons[type].src}" alt="${icons[type].alt}" />`;
+            container.appendChild(a);
           }
-
-          document.getElementById("title").textContent = found.title;
-          document.getElementById("category").textContent = found.category;
-          document.getElementById("description").textContent = found.description || "-";
-
-          const icons = {
-            pdf: { src: "img/pdf.png", alt: "PDF 다운로드" },
-            xls: { src: "img/xls.png", alt: "XLS 다운로드" },
-            doc: { src: "img/doc.png", alt: "DOC 다운로드" },
-            hwp: { src: "img/hwp.png", alt: "HWP 다운로드" }
-          };
-
-          const container = document.getElementById("downloadArea");
-          for (const type in icons) {
-            const file = found[type];
-            if (file && file !== "nan") {
-              const link = file.startsWith("http") ? file : `files/${file}`;
-              const a = document.createElement("a");
-              a.href = link;
-              a.target = "_blank";
-              a.innerHTML = `<img src="${icons[type].src}" alt="${icons[type].alt}" />`;
-              container.appendChild(a);
-            }
-          }
-        })
-        .catch(error => {
-          console.error("데이터를 불러오지 못했습니다:", error);
-          document.getElementById("title").textContent = "데이터 오류";
-          document.getElementById("description").textContent = "불러오는 중 문제가 발생했습니다.";
-        });
-    }
-  </script>
+        }
+      })
+      .catch(error => {
+        console.error("데이터를 불러오지 못했습니다:", error);
+        document.getElementById("title").textContent = "데이터 오류";
+        document.getElementById("description").textContent = "불러오는 중 문제가 발생했습니다.";
+      });
+  }
+</script>
 </body>
 </html>
