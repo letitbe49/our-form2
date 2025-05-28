@@ -9,32 +9,19 @@
     html, body {
       margin: 0;
       padding: 0;
+      height: auto;
       min-height: 100%;
-    }
-
-    body {
       font-family: 'Arial', sans-serif;
       background-color: #f2f2f2;
-      padding-top: 90px;
-      display: block;
-    }
-
-    .container {
-      margin-top: 0;
-      width: 100%;
-      max-width: 500px;
-      padding: 0 10px;
     }
 
     .fixed-top {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      right: 0;
+      width: 95%;
+      margin: 0 auto;
       background-color: #f2f2f2;
       padding: 10px 0;
       z-index: 1000;
@@ -42,8 +29,6 @@
     }
 
     .search-container {
-      width: 95%;
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -59,7 +44,7 @@
     #searchInput {
       flex: 1;
       padding: 14px;
-      font-size: 17px;
+      font-size: 28px;
       margin: 0 10px;
       border: 2px solid #bbb;
       border-radius: 6px;
@@ -72,6 +57,14 @@
 
     .back-button {
       display: inline-block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 0 10px;
+      margin: 0 auto;
+      margin-top: 90px;
     }
 
     .card {
@@ -120,22 +113,17 @@
     }
 
     @media (max-width: 360px) {
-      .container {
-      margin-top: 0;
-        max-width: 100%;
-      }
-
       #searchInput {
         font-size: 27px;
         padding: 12px;
       }
 
       .card h3, .card h3 a {
-        font-size: 25.2px;
+        font-size: 24px;
       }
 
       .card p {
-        font-size: 23.4px;
+        font-size: 22px;
       }
     }
   </style>
