@@ -24,12 +24,12 @@
     }
 
     .search-container {
-      width: 90%;
-      max-width: 500px;
+      max-width: 320px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 8px;
     }
 
     .search-icon {
@@ -41,7 +41,7 @@
       flex: 1;
       margin: 0 10px;
       padding: 12px;
-      font-size: 18px;
+      font-size: 16px;
       border: 2px solid #bbb;
       border-radius: 6px;
     }
@@ -52,18 +52,21 @@
     }
 
     .container {
+      display: flex;
+      justify-content: center;
       margin-top: 80px;
       padding-bottom: 40px;
     }
 
     .card {
-      width: 320px;
-      margin: 0 auto 20px auto;
+      width: 100%;
+      max-width: 320px;
       background: #fff;
       border: 2px solid #ddd;
       border-left: 6px solid #1976d2;
       border-radius: 10px;
       padding: 12px 18px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
@@ -102,7 +105,8 @@
     </div>
   </div>
 
-  <div class="container" id="cardList">
+  <div class="container">
+    <div id="cardList">
 
     <div class="card">
       <h3 class="title"><a href="form-detail.html?id=sub-global1-1">8-1 - 영문이력서</a></h3>
