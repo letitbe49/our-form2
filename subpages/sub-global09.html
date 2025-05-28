@@ -1,185 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>문서 상세보기</title>
+  <title>sub-global09.html</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #f0f0f0;
-      background-image: url('../img/책 하트페이지.jpg');
+      background-color: #f2f2f2;
+      background-image: url('../img/백지문서 사진.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .wrapper {
-      max-width: 360px;
+    .fixed-top {
+      width: 100%;
+      background-color: #f2f2f2;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .fixed-inner {
+      width: 280px;
       margin: 0 auto;
-      padding: 24px 16px 80px;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
     }
 
-    h1 {
-      font-size: 20px;
-      color: #333;
-      margin-bottom: 6px;
+    .search-wrapper {
+      width: 100%;
     }
 
-    .meta {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-weight: bold;
-      margin: 24px 0 8px;
-      font-size: 15px;
-      color: #000;
-    }
-
-    .description-box {
-      background: #eef4ff;
-      padding: 12px;
-      border-radius: 6px;
-      color: #333;
-      font-size: 14px;
-    }
-
-    .preview-box {
-      background: #ffecec;
-      padding: 12px;
-      border-radius: 6px;
-      color: #444;
-      font-size: 14px;
-    }
-
-    .download-section {
+    .search-inner {
       display: flex;
-      gap: 24px;
+      align-items: center;
       justify-content: center;
-      margin-top: 24px;
-      flex-wrap: wrap;
+      gap: 6px;
     }
 
-    .download-section img {
-      width: 60px;
-      height: auto;
-      cursor: pointer;
+    .search-icon,
+    .back-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
     }
 
-    .back-link {
-      display: block;
-      margin-top: 40px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 14px;
-      background: #3366cc;
-      color: #fff;
-      padding: 10px 20px;
+    .back-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    #searchInput {
+      flex-grow: 0.8;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #bbb;
       border-radius: 6px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    @media (min-width: 700px) {
-      .wrapper {
-        max-width: 640px;
-        padding: 40px;
-      }
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+      padding-bottom: 40px;
+    }
 
-      h1 {
-        font-size: 24px;
-      }
+    .card {
+      width: 100%;
+      max-width: 280px;
+      background: #fff;
+      border: 2px solid #ddd;
+      border-left: 6px solid #1976d2;
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
 
-      .download-section img {
-        width: 80px;
-      }
+    .card h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 10px;
+      color: #0d47a1;
+      word-break: break-word;
+    }
+
+    .card p {
+      margin: 4px 0;
+      font-size: 16px;
+      color: #333;
+      word-break: break-word;
+    }
+
+    .icons {
+      margin-top: 10px;
+    }
+
+    .icons img {
+      width: 36px;
+      margin-right: 8px;
+      vertical-align: middle;
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1 id="title">문서 제목</h1>
-    <div class="meta" id="category">카테고리</div>
-
-    <div class="section-title">문서 설명</div>
-    <div class="description-box" id="description">설명 불러오는 중...</div>
-
-    <div class="section-title">미리보기</div>
-    <div class="preview-box">
-      ※ 이 문서는 미리보기를 지원하지 않습니다. 아래 아이콘을 눌러 다운로드하세요.
+  <div class="fixed-top">
+    <div class="fixed-inner">
+      <div class="search-wrapper">
+        <div class="search-inner">
+          <img src="../img/glass_14873917.png" alt="검색" class="search-icon" />
+          <input type="text" id="searchInput" placeholder="검색어를 입력하세요" />
+          <a href="../global-list.html" class="back-button">
+            <img src="../img/back_12231706.png" alt="돌아가기" class="back-icon" />
+          </a>
+        </div>
+      </div>
     </div>
-
-    <div class="section-title">다운로드 링크</div>
-    <div class="download-section" id="downloadArea"></div>
-
-    <a class="back-link" href="../subpages/sub-global01.html">← 목록으로 돌아가기</a>
   </div>
 
+  <div class="container">
+    <div id="cardList">
+    
+   
+
   <script>
-    const data = {
-      "sub-global1-1": {
-        title: "8-1 - 영문이력서",
-        category: "공통",
-        description: "영문으로 작성된 이력서 템플릿입니다. 해외취업 및 외국계 회사 지원 시 기본 포맷으로 사용됩니다.",
-        files: {
-          pdf: "../files/sample.pdf",
-          xls: "../files/sample.xls",
-          doc: null,
-          hwp: null
-        }
-      },
-      "sub-global1-2": {
-        title: "8-2 - 외국인전용 계약서",
-        category: "공통",
-        description: "외국인을 위한 근로계약서 표준양식입니다.",
-        files: {
-          pdf: "../files/contract.pdf",
-          hwp: "../files/contract.hwp",
-          doc: null,
-          xls: null
-        }
-      }
-    };
-
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-
-    if (data[id]) {
-      const d = data[id];
-      document.getElementById("title").textContent = d.title;
-      document.getElementById("category").textContent = d.category;
-      document.getElementById("description").textContent = d.description;
-
-      const icons = {
-        pdf: { src: "../img/pdf.png", alt: "PDF 다운로드" },
-        xls: { src: "../img/xls.png", alt: "XLS 다운로드" },
-        doc: { src: "../img/doc.png", alt: "DOC 다운로드" },
-        hwp: { src: "../img/hwp.png", alt: "HWP 다운로드" },
-      };
-
-      const container = document.getElementById("downloadArea");
-      Object.keys(d.files).forEach(type => {
-        const url = d.files[type];
-        if (url) {
-          const a = document.createElement("a");
-          a.href = url;
-          a.innerHTML = `<img src="\${icons[type].src}" alt="\${icons[type].alt}" />`;
-          container.appendChild(a);
-        }
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(keyword) ? "block" : "none";
       });
-    } else {
-      document.getElementById("title").textContent = "문서를 찾을 수 없습니다.";
-      document.getElementById("description").textContent = "-";
-    }
+    });
   </script>
+
 </body>
 </html>
