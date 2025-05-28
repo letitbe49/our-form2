@@ -157,7 +157,7 @@
       const d = data[id];
       document.getElementById("title").textContent = d.title;
       document.getElementById("category").textContent = d.category;
-      document.getElementById("description").textContent = d.description;
+      document.getElementById("description").textContent = d && d.description ? d.description : "설명을 찾을 수 없습니다.";
 
       const icons = {
         pdf: { src: "../img/pdf.png", alt: "PDF 다운로드" },
