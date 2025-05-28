@@ -4,89 +4,99 @@
     "title": "입사지원서",
     "category": "신청서, 제출서류",
     "description": "입사를 위한 지원서 양식",
-    "pdf": "2-1.입사지원서.pdf",
+    "pdf": "https://drive.google.com/uc?id=1h7GTh2mnI7LwI673jC6HrkniKjqtx4qL",
     "hwp": "nan",
-    "doc": "2-1.입사지원서.docx.docx"
+    "doc": "https://drive.google.com/uc?id=1hU_7uM9tkgSHel4lXNoyE5FlWa_OIciG",
+    "xls": "nan"
   },
   {
     "code": "2-2",
     "title": "자기소개서",
     "category": "신청서, 제출서류",
     "description": "입사지원서와 함께 작성되는 자기소개서 양식",
-    "pdf": "2-2.자기소개서.pdf",
+    "pdf": "https://drive.google.com/uc?id=1B_EPPlEgq19f6KSd8ZIsqRyBlDpvZjlm",
     "hwp": "nan",
-    "doc": "2-2.자기소개서.docx.docx"
+    "doc": "https://drive.google.com/uc?id=18__dr39UX45BvJUkm7xWmf3vEMv-ST2-",
+    "xls": "nan"
   },
   {
     "code": "2-3",
     "title": "견적서양식(일반)",
     "category": "신청서, 제출서류",
     "description": "일반 견적서의 양식",
-    "pdf": "2-3.견적서양식(일반).pdf",
+    "pdf": "https://drive.google.com/uc?id=1ilnQPOGsdpDL-fdjToMY9ObVlOE9eeQU",
     "hwp": "nan",
-    "doc": "nan"
+    "doc": "nan",
+    "xls": "https://drive.google.com/uc?id=1nj8UmmsoVUD4g3qj1NK4S1ENYixBQCPQ"
   },
   {
     "code": "2-4",
     "title": "건설공사표준도급계약서",
     "category": "신청서, 제출서류",
     "description": "건설공사의 하도급에 관한 표준계약서",
-    "pdf": "2-4.건설공사표준도급계약서.hwp.pdf",
-    "hwp": "2-4.건설공사표준도급계약서.hwp.hwp",
-    "doc": "nan"
+    "pdf": "https://drive.google.com/uc?id=1Z-K9VhktlgL3blyg-WrouoszWYDiF7_b",
+    "hwp": "https://drive.google.com/uc?id=1ovdUu_ilORrsQ8ompbyiAoHkrdGSbWd-",
+    "doc": "nan",
+    "xls": "nan"
   },
   {
     "code": "2-5",
     "title": "퇴직서(일반)",
     "category": "신청서, 제출서류",
     "description": "퇴직에 대한 일반 양식",
-    "pdf": "2-5.퇴직서(일반).pdf",
+    "pdf": "https://drive.google.com/uc?id=19pzBo2vIbY5Ix2QmXEOOPH1EaoqzZOBd",
     "hwp": "nan",
-    "doc": "2-5.퇴직서(일반).doc.docx"
+    "doc": "https://drive.google.com/uc?id=17DeXS6Hhw9-N6x-6S6fuFKTefYsbGZWh",
+    "xls": "nan"
   },
   {
     "code": "2-6",
     "title": "사직서 양식",
     "category": "신청서, 제출서류",
     "description": "사직에 관한 일반 양식",
-    "pdf": "2-6.사직서 양식.hwp.pdf",
-    "hwp": "2-6.사직서 양식.hwp.hwp",
-    "doc": "2-6.사직서 양식.doc.doc"
+    "pdf": "https://drive.google.com/uc?id=1Zm-_QQs9g5rLbD9M8Wu8BcGkTmMYLxOv",
+    "hwp": "https://drive.google.com/uc?id=1UO8dQxjQItmHWviunGg1_NbpHkoPFohg",
+    "doc": "https://drive.google.com/uc?id=1ezkJxKQQCnjnOCDqwadqTloo6r-7JEJk",
+    "xls": "https://drive.google.com/uc?id=1Tu2oCTSoqZJd-knZ7qLI8AlQ0RjCijEi"
   },
   {
     "code": "2-7",
     "title": "개인정보+수집∙이용+및+제3자+제공동의서",
     "category": "신청서, 제출서류",
     "description": "개인정보수집,이용,제3자의 제공에 관한 동의서",
-    "pdf": "2-7.[별지 9] 개인정보 수집·이용 동의서(서식)(법무부 개인정보 보호지침).pdf",
-    "hwp": "2-7.[별지 9] 개인정보 수집·이용 동의서(서식)(법무부 개인정보 보호지침).hwp",
-    "doc": "nan"
+    "pdf": "https://drive.google.com/uc?id=1Bw1Hyo_tDd-X_oZagf5j57YQM7XjaWx9",
+    "hwp": "https://drive.google.com/uc?id=1IcOPDEev_5JzzLozZR7ZFgHlsh9F3qbA",
+    "doc": "nan",
+    "xls": "nan"
   },
   {
     "code": "2-8",
     "title": "이력서 양식(1)",
     "category": "신청서, 제출서류",
     "description": "입사를 위해 이력을 나열하는 양삭",
-    "pdf": "2-8.이력서 양식(1).pdf",
+    "pdf": "https://drive.google.com/uc?id=10m6gqT3-NyjJjyuVhVysl2Lx2EuE4kA1",
     "hwp": "nan",
-    "doc": "2-8.이력서 양식(1).doc.docx"
+    "doc": "https://drive.google.com/uc?id=1OeT_W9fgT-n9l08ztts8NQ13xQlKpl6f",
+    "xls": "nan"
   },
   {
     "code": "2-9",
     "title": "이력서 자기소개서 양식(2)",
     "category": "신청서, 제출서류",
     "description": "입사를 위해 이력을 나열하는 양삭+자기소개서",
-    "pdf": "2-9.이력서 자기소개서 양식(2).hwp.pdf",
-    "hwp": "2-9.이력서 자기소개서 양식(2).hwp.hwp",
-    "doc": "nan"
+    "pdf": "https://drive.google.com/uc?id=1mVcJH42G_pYifDKiLUXkeFQxzGoanqup",
+    "hwp": "https://drive.google.com/uc?id=1BVrAd-OPbftslgEWAjZ4PB29EpatC7tv",
+    "doc": "nan",
+    "xls": "nan"
   },
   {
     "code": "2-10",
     "title": "이력서 자기소개서 양식(3)",
     "category": "신청서, 제출서류",
     "description": "입사를 위해 이력을 나열하는 양삭+자기소개서",
-    "pdf": "2-10.이력서 자기소개서 양식(3).hwp.pdf",
-    "hwp": "2-10.이력서 자기소개서 양식(3).hwp.hwp",
-    "doc": "nan"
+    "pdf": "https://drive.google.com/uc?id=1d8V13HcXI_ll3MWOv7rqFo73DFdn8Cp4",
+    "hwp": "https://drive.google.com/uc?id=1xL5n3buZT_-hX_28P-U4oGlBM0vjQddA",
+    "doc": "nan",
+    "xls": "nan"
   }
 ]
