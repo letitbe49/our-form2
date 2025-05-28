@@ -1,72 +1,106 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>문서 상세보기</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    h1 { font-size: 28px; }
-    .description, .category { font-size: 18px; margin: 10px 0; }
-    .section-title { font-weight: bold; font-size: 18px; margin-top: 30px; }
-    .icons img { width: 85px; margin: 0 10px; vertical-align: middle; }
-    .back { margin-top: 40px; display: block; font-size: 16px; color: blue; text-decoration: none; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .wrapper {
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin: 24px 0 8px;
+      font-size: 15px;
+      color: #000;
+    }
+
+    .preview-box {
+      background: #fff0f0;
+      padding: 12px;
+      border-radius: 6px;
+      color: #444;
+      font-size: 14px;
+    }
+
+    .download-section {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .download-section img {
+      width: 60px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      text-align: center;
+      color: #1a4ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    @media (min-width: 700px) {
+      .wrapper {
+        max-width: 640px;
+        padding: 40px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .download-section img {
+        width: 80px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1 id="title">서식명 :</h1>
-  <div class="description" id="description">간단 설명 :</div>
-  <div class="category" id="category">분류(카테고리) :</div>
+  <div class="wrapper">
+    <h1>8-1 - 영문이력서</h1>
+    <div class="meta">English resume<br />공통</div>
 
-  <div class="section-title">미리보기</div>
-  <div id="previewArea">※ 이 문서는 미리보기를 지원하지 않습니다. 아래 아이콘을 눌러 다운로드하세요.</div>
+    <div class="section-title">미리보기</div>
+    <div class="preview-box">
+      ※ 이 문서는 미리보기를 지원하지 않습니다. 아래 아이콘을 눌러 다운로드하세요.
+    </div>
 
-  <div class="section-title">다운로드 링크</div>
-  <div class="icons" id="icons"></div>
+    <div class="section-title">다운로드 링크</div>
+    <div class="download-section">
+      <a href="#"><img src="../img/pdf.png" alt="PDF 다운로드" /></a>
+      <a href="#"><img src="../img/xls.png" alt="XLS 다운로드" /></a>
+    </div>
 
-  <a href="#" class="back" id="backLink">← 목록으로 돌아가기</a>
-
-  <script>
-    function getQueryParam(name) {
-      const params = new URLSearchParams(window.location.search);
-      return params.get(name);
-    }
-
-    const id = getQueryParam("id");
-
-    fetch("../data/forms.json")
-      .then(response => response.json())
-      .then(data => {
-        const form = data.find(item => item.id === id);
-        const title = document.getElementById("title");
-        const description = document.getElementById("description");
-        const category = document.getElementById("category");
-        const icons = document.getElementById("icons");
-        const backLink = document.getElementById("backLink");
-
-        if (!form) {
-          title.innerText = "해당 문서를 찾을 수 없습니다.";
-          description.innerText = "";
-          category.innerText = "";
-          icons.innerHTML = "";
-          return;
-        }
-
-        title.innerText = form.code + " - " + form.title;
-        description.innerText = form.description;
-        category.innerText = form.category;
-
-        if (form.pdf) icons.innerHTML += `<a href="${form.pdf}" target="_blank"><img src="../img/pdf.png" alt="PDF"></a>`;
-        if (form.doc) icons.innerHTML += `<a href="${form.doc}" target="_blank"><img src="../img/doc.png" alt="DOC"></a>`;
-        if (form.hwp) icons.innerHTML += `<a href="${form.hwp}" target="_blank"><img src="../img/hwp.png" alt="HWP"></a>`;
-        if (form.xls) icons.innerHTML += `<a href="${form.xls}" target="_blank"><img src="../img/xls.png" alt="XLS"></a>`;
-
-        let categoryPage = '';
-        if (form.category.includes('공공')) categoryPage = 'sub-public.html';
-        else if (form.category.includes('개인')) categoryPage = 'sub-personal.html';
-        else if (form.category.includes('외국')) categoryPage = 'sub-global.html';
-
-        backLink.href = `../subpages/${categoryPage}`;
-      });
-  </script>
+    <a class="back-link" href="javascript:history.back()">← 목록으로 돌아가기</a>
+  </div>
 </body>
 </html>
