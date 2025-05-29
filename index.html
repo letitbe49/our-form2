@@ -104,22 +104,10 @@
   </style>
 </head>
 <body>
-<button id="loginBtn" onclick="window.location.href='login.html'" style="
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  background: #3366cc;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-">로그인 / 회원가입</button>
 
   <div class="content-wrapper">
     <div id="loginStatus" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <button id="loginBtn" onclick="window.location.href='login.html'" style="display: none; padding: 6px 12px; background:#3366cc; color:#fff; border:none; border-radius:4px;">로그인 / 회원가입</button>
       <div id="welcomeText" style="font-weight: bold; font-size: 14px;">로그인 상태 확인 중...</div>
       <button id="logoutBtn" onclick="logout()" style="display: none; padding: 6px 12px; background:#3366cc; color:#fff; border:none; border-radius:4px;">로그아웃(Logout)</button>
     </div>
