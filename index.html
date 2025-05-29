@@ -90,29 +90,6 @@
       height: auto;
     }
 
-    #loginStatus {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    #logoutBtn {
-      padding: 6px 12px;
-      background: #3366cc;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    #logoutBtn:hover {
-      background: #254a99;
-    }
-
     @media (min-width: 601px) {
       .category-container {
         flex-direction: row;
@@ -128,12 +105,12 @@
 </head>
 <body>
 
-  <div id="loginStatus">
-    <div id="welcomeText">로그인 상태 확인 중...</div>
-    <button id="logoutBtn" onclick="logout()" style="display: none;">로그아웃</button>
-  </div>
-
   <div class="content-wrapper">
+    <div id="loginStatus" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <div id="welcomeText" style="font-weight: bold; font-size: 14px;">로그인 상태 확인 중...</div>
+      <button id="logoutBtn" onclick="logout()" style="display: none; padding: 6px 12px; background:#3366cc; color:#fff; border:none; border-radius:4px;">로그아웃</button>
+    </div>
+
     <h1>아워폼 Our Form</h1>
     <h2>우리의 양식 / 모두의 서식</h2>
     <p>공공기관관련 민원 서식 / 계약,법률,여권,생활등의 일반 서식 / 외국인(foreigner)전용 서식 모두 한 곳에!</p>
