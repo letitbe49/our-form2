@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>관리자 페이지 - 가입자 목록</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #3366cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>가입자 목록 (Google Sheets에서 실시간 조회)</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>이메일</th>
+        <th>회원등급</th>
+        <th>가입시간</th>
+      </tr>
+    </thead>
+    <tbody id="userTable">
+      <tr><td colspan="3">불러오는 중...</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3NyGDEMOCKURL/pub?output=csv";
+
+    fetch(sheetURL)
+      .then(res => res.text())
+      .then(csv => {
+        const lines = csv.trim().split("\n");
+        const rows = lines.slice(1).map(line => line.split(","));
+        const tbody = document.getElementById("userTable");
+        tbody.innerHTML = "";
+        rows.forEach(row => {
+          const tr = document.createElement("tr");
+          row.forEach(cell => {
+            const td = document.createElement("td");
+            td.textContent = cell;
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(err => {
+        document.getElementById("userTable").innerHTML = "<tr><td colspan='3'>불러오기 실패</td></tr>";
+        console.error("CSV 불러오기 오류:", err);
+      });
+  </script>
+</body>
+</html>
