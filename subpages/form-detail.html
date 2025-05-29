@@ -168,12 +168,10 @@
               const user = localStorage.getItem("userEmail");
               const type = localStorage.getItem("memberType");
               if (!user) {
-                alert("로그인이 필요합니다.");
-                window.location.href = "../login.html";
-              } else if (type !== "paid") {
-                alert("유료회원만 다운로드 가능합니다.");
+              alert("로그인이 필요합니다.");
+              window.location.href = "../login.html";
               } else {
-                window.open(link, "_blank");
+              window.open(link, "_blank");
               }
             });
 
