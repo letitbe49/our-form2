@@ -162,15 +162,18 @@
             a.href = "#";
             a.innerHTML = `<img src="${icons[type].src}" alt="${icons[type].alt}" />`;
 
-            // 로그인 체크 후 다운로드 또는 로그인 페이지 이동
+            // 유료회원만 다운로드 허용
             a.addEventListener("click", (e) => {
               e.preventDefault();
               const user = localStorage.getItem("userEmail");
-              if (user) {
-                window.open(link, "_blank");
-              } else {
-                alert("다운로드하려면 로그인이 필요합니다.");
+              const type = localStorage.getItem("memberType");
+              if (!user) {
+                alert("로그인이 필요합니다.");
                 window.location.href = "../login.html";
+              } else if (type !== "paid") {
+                alert("유료회원만 다운로드 가능합니다.");
+              } else {
+                window.open(link, "_blank");
               }
             });
 
