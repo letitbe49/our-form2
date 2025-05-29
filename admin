@@ -18,28 +18,50 @@
       margin-bottom: 30px;
     }
 
-    .summary {
+    .summary, .controls {
       max-width: 800px;
-      margin: 0 auto 30px;
+      margin: 0 auto 20px;
       background: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      font-size: 18px;
-      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .controls a {
+      text-decoration: none;
+      background: #3366cc;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
     }
 
     canvas {
       display: block;
-      max-width: 600px;
-      margin: 30px auto;
+      max-width: 700px;
+      margin: 40px auto;
     }
   </style>
 </head>
 <body>
-  <h1>가입자 요약 대시보드</h1>
+  <h1>아워폼 관리자 대시보드</h1>
+
   <div class="summary" id="summaryText">요약 정보를 불러오는 중...</div>
+
+  <div class="controls">
+    <strong>가입자 통계</strong>
+    <a href="admin.html">가입자 목록 보기 →</a>
+  </div>
+
   <canvas id="memberChart"></canvas>
+  <canvas id="dailyChart"></canvas>
 
   <script>
     const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv";
@@ -60,8 +82,9 @@
           유료회원 비율: <strong>${((paid / total) * 100).toFixed(1)}%</strong>
         `;
 
-        const ctx = document.getElementById("memberChart").getContext("2d");
-        new Chart(ctx, {
+        // 회원 등급 차트
+        const memberCtx = document.getElementById("memberChart").getContext("2d");
+        new Chart(memberCtx, {
           type: "doughnut",
           data: {
             labels: ["무료회원", "유료회원"],
@@ -71,11 +94,38 @@
             }]
           },
           options: {
-            responsive: true,
-            plugins: {
-              legend: {
-                position: "bottom"
-              }
+            plugins: { legend: { position: "bottom" } }
+          }
+        });
+
+        // 날짜별 가입자 수 계산
+        const dateCounts = {};
+        rows.forEach(row => {
+          const rawDate = new Date(row[2]);
+          const dateStr = rawDate.toISOString().split("T")[0]; // YYYY-MM-DD
+          if (!dateCounts[dateStr]) dateCounts[dateStr] = 0;
+          dateCounts[dateStr]++;
+        });
+
+        const dailyLabels = Object.keys(dateCounts).sort();
+        const dailyData = dailyLabels.map(date => dateCounts[date]);
+
+        const dailyCtx = document.getElementById("dailyChart").getContext("2d");
+        new Chart(dailyCtx, {
+          type: "bar",
+          data: {
+            labels: dailyLabels,
+            datasets: [{
+              label: "일별 가입자 수",
+              data: dailyData,
+              backgroundColor: "#4caf50"
+            }]
+          },
+          options: {
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { title: { display: true, text: "날짜" } },
+              y: { beginAtZero: true, title: { display: true, text: "가입자 수" } }
             }
           }
         });
