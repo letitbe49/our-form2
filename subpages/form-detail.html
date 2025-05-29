@@ -169,7 +169,7 @@
               const type = localStorage.getItem("memberType");
               if (!user) {
               alert("로그인이 필요합니다.");
-              window.location.href = "../login.html";
+              window.location.href = "../login.html?redirect=" + encodeURIComponent(window.location.href);
               } else {
               window.open(link, "_blank");
               }
