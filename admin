@@ -54,7 +54,7 @@
   </table>
 
   <script>
-    const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ3NyGDEMOCKURL/pub?output=csv";
+    const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv";
 
     fetch(sheetURL)
       .then(res => res.text())
