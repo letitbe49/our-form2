@@ -3,104 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>관리자 페이지 - 가입자 목록</title>
+  <title>관리자 대시보드</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #f9f9f9;
       margin: 0;
       padding: 40px;
     }
 
     h1 {
       text-align: center;
-      color: #333;
+      margin-bottom: 30px;
     }
 
-    .controls {
+    .summary {
       max-width: 800px;
-      margin: 0 auto 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    input[type="text"] {
-      flex: 1;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    a.download-btn {
-      padding: 10px 16px;
-      background: #3366cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-
-    table {
-      width: 100%;
-      max-width: 800px;
-      margin: 20px auto;
-      border-collapse: collapse;
+      margin: 0 auto 30px;
       background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      font-size: 18px;
+      line-height: 1.6;
     }
 
-    th, td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-
-    th {
-      background-color: #3366cc;
-      color: white;
+    canvas {
+      display: block;
+      max-width: 600px;
+      margin: 30px auto;
     }
   </style>
 </head>
 <body>
-  <h1>가입자 목록 (관리자 전용)</h1>
-
-  <div class="controls">
-    <input type="text" id="searchBox" placeholder="이메일 또는 회원등급 검색" onkeyup="filterTable()" />
-    <a class="download-btn" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv" download>CSV 다운로드</a>
-  </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>이메일</th>
-        <th>회원등급</th>
-        <th>가입시간</th>
-      </tr>
-    </thead>
-    <tbody id="userTable">
-      <tr><td colspan="3">불러오는 중...</td></tr>
-    </tbody>
-  </table>
+  <h1>가입자 요약 대시보드</h1>
+  <div class="summary" id="summaryText">요약 정보를 불러오는 중...</div>
+  <canvas id="memberChart"></canvas>
 
   <script>
-    const password = prompt("관리자 비밀번호를 입력하세요:");
-    if (password !== "5414087") {
-      alert("접근이 거부되었습니다.");
-      window.location.href = "index.html";
-    }
-
-    function filterTable() {
-      const input = document.getElementById("searchBox").value.toLowerCase();
-      const rows = document.querySelectorAll("#userTable tr");
-      rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(input) ? "" : "none";
-      });
-    }
-
     const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv";
 
     fetch(sheetURL)
@@ -108,21 +49,40 @@
       .then(csv => {
         const lines = csv.trim().split("\n");
         const rows = lines.slice(1).map(line => line.split(","));
-        const tbody = document.getElementById("userTable");
-        tbody.innerHTML = "";
-        rows.forEach(row => {
-          const tr = document.createElement("tr");
-          row.forEach(cell => {
-            const td = document.createElement("td");
-            td.textContent = cell;
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
+        const total = rows.length;
+        const paid = rows.filter(row => row[1].trim() === "paid").length;
+        const free = total - paid;
+
+        document.getElementById("summaryText").innerHTML = `
+          총 가입자 수: <strong>${total}</strong><br>
+          유료회원: <strong>${paid}</strong>명<br>
+          무료회원: <strong>${free}</strong>명<br>
+          유료회원 비율: <strong>${((paid / total) * 100).toFixed(1)}%</strong>
+        `;
+
+        const ctx = document.getElementById("memberChart").getContext("2d");
+        new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["무료회원", "유료회원"],
+            datasets: [{
+              data: [free, paid],
+              backgroundColor: ["#90caf9", "#42a5f5"]
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "bottom"
+              }
+            }
+          }
         });
       })
       .catch(err => {
-        document.getElementById("userTable").innerHTML = "<tr><td colspan='3'>불러오기 실패</td></tr>";
-        console.error("CSV 불러오기 오류:", err);
+        document.getElementById("summaryText").innerText = "데이터 불러오기 실패";
+        console.error("통계 로딩 오류:", err);
       });
   </script>
 </body>
