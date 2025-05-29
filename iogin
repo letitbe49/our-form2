@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #254a99;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>로그인</h2>
+    <input id="email" type="email" placeholder="이메일 입력" />
+    <button onclick="login()">로그인</button>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      if (email) {
+        localStorage.setItem("userEmail", email); // 브라우저에 저장
+        alert("로그인 완료!");
+        window.location.href = "index.html"; // 로그인 후 이동할 페이지
+      } else {
+        alert("이메일을 입력하세요.");
+      }
+    }
+  </script>
+</body>
+</html>
 
