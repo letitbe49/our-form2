@@ -1,31 +1,88 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>로그인 - 아워폼</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>로그인</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 50px; }
-    .login-btn { margin: 15px; padding: 15px 30px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; width: 250px; }
-    .google { background-color: #4285F4; color: white; }
-    .naver { background-color: #03C75A; color: white; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    input, select {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #254a99;
+    }
   </style>
 </head>
 <body>
-
-  <h1>다운로드를 위해 로그인하세요</h1>
-  <p>한 번의 로그인으로 모든 서식을 자유롭게 이용할 수 있습니다.</p>
-
-  <div>
-    <button class="login-btn google" onclick="fakeLogin()">Google 로그인</button><br>
-    <button class="login-btn naver" onclick="fakeLogin()">Naver 로그인</button>
+  <div class="login-container">
+    <h2>로그인</h2>
+    <input id="email" type="email" placeholder="이메일 입력" />
+    <select id="memberType">
+      <option value="free">무료 회원</option>
+      <option value="paid">유료 회원</option>
+    </select>
+    <button onclick="login()">로그인</button>
   </div>
 
   <script>
-    function fakeLogin() {
-      alert("로그인 되었다고 가정하고 다운로드 페이지로 이동합니다.");
-      window.location.href = "download.html";
+    function login() {
+      const email = document.getElementById("email").value;
+      const memberType = document.getElementById("memberType").value;
+      if (email) {
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("memberType", memberType);
+
+        // Google Sheets에 정보 저장
+        fetch("https://script.google.com/macros/s/AKfycbwNFxYgmwaHp-LQY6K-Os5VXSMBQ500dTzzdGPDKC_tD9H89J_gfxCzpNJiTB50-2r_0A/exec", {
+          method: "POST",
+          body: new URLSearchParams({
+            email: email,
+            memberType: memberType
+          })
+        });
+
+        alert("로그인 완료! (" + memberType + ")");
+        window.location.href = "index.html";
+      } else {
+        alert("이메일을 입력하세요.");
+      }
     }
   </script>
-
 </body>
 </html>
