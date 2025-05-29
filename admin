@@ -18,7 +18,7 @@
       margin-bottom: 30px;
     }
 
-    .summary, .controls {
+    .summary, .controls, .filter {
       max-width: 800px;
       margin: 0 auto 20px;
       background: white;
@@ -28,19 +28,30 @@
       font-size: 16px;
     }
 
-    .controls {
+    .controls, .filter {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .controls a {
-      text-decoration: none;
+    input, select {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button, a.button {
       background: #3366cc;
       color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
+      padding: 8px 16px;
       font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     canvas {
@@ -56,79 +67,140 @@
   <div class="summary" id="summaryText">요약 정보를 불러오는 중...</div>
 
   <div class="controls">
-    <strong>가입자 통계</strong>
-    <a href="admin.html">가입자 목록 보기 →</a>
+    <a class="button" href="admin.html">가입자 목록 보기 →</a>
+    <a class="button" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv" download>CSV 다운로드</a>
+  </div>
+
+  <div class="filter">
+    <label>날짜 기준 필터:
+      <input type="date" id="filterDate" />
+    </label>
+    <label>회원등급:
+      <select id="filterType">
+        <option value="">전체</option>
+        <option value="free">무료</option>
+        <option value="paid">유료</option>
+      </select>
+    </label>
+    <button onclick="applyFilter()">필터 적용</button>
   </div>
 
   <canvas id="memberChart"></canvas>
   <canvas id="dailyChart"></canvas>
+  <canvas id="monthlyChart"></canvas>
 
   <script>
+    let originalRows = [];
+
     const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv";
+
+    function parseAndDisplay(rows) {
+      const total = rows.length;
+      const paid = rows.filter(row => row[1].trim() === "paid").length;
+      const free = total - paid;
+
+      document.getElementById("summaryText").innerHTML = `
+        총 가입자 수: <strong>${total}</strong><br>
+        유료회원: <strong>${paid}</strong>명<br>
+        무료회원: <strong>${free}</strong>명<br>
+        유료회원 비율: <strong>${((paid / total) * 100).toFixed(1)}%</strong>
+      `;
+
+      // 등급 도넛 차트
+      const memberCtx = document.getElementById("memberChart").getContext("2d");
+      new Chart(memberCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["무료회원", "유료회원"],
+          datasets: [{
+            data: [free, paid],
+            backgroundColor: ["#90caf9", "#42a5f5"]
+          }]
+        },
+        options: {
+          plugins: { legend: { position: "bottom" } }
+        }
+      });
+
+      // 일별 가입자 바 차트
+      const dateCounts = {};
+      rows.forEach(row => {
+        const rawDate = new Date(row[2]);
+        const dateStr = rawDate.toISOString().split("T")[0];
+        if (!dateCounts[dateStr]) dateCounts[dateStr] = 0;
+        dateCounts[dateStr]++;
+      });
+      const dailyLabels = Object.keys(dateCounts).sort();
+      const dailyData = dailyLabels.map(date => dateCounts[date]);
+      new Chart(document.getElementById("dailyChart").getContext("2d"), {
+        type: "bar",
+        data: {
+          labels: dailyLabels,
+          datasets: [{
+            label: "일별 가입자 수",
+            data: dailyData,
+            backgroundColor: "#4caf50"
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { title: { display: true, text: "날짜" } },
+            y: { beginAtZero: true, title: { display: true, text: "가입자 수" } }
+          }
+        }
+      });
+
+      // 월별 집계 차트
+      const monthCounts = {};
+      rows.forEach(row => {
+        const rawDate = new Date(row[2]);
+        const monthKey = rawDate.getFullYear() + "-" + String(rawDate.getMonth() + 1).padStart(2, "0");
+        if (!monthCounts[monthKey]) monthCounts[monthKey] = 0;
+        monthCounts[monthKey]++;
+      });
+      const monthLabels = Object.keys(monthCounts).sort();
+      const monthData = monthLabels.map(m => monthCounts[m]);
+      new Chart(document.getElementById("monthlyChart").getContext("2d"), {
+        type: "line",
+        data: {
+          labels: monthLabels,
+          datasets: [{
+            label: "월별 가입자 수",
+            data: monthData,
+            borderColor: "#ff9800",
+            backgroundColor: "#ffe0b2",
+            fill: true
+          }]
+        },
+        options: {
+          scales: {
+            x: { title: { display: true, text: "월" } },
+            y: { beginAtZero: true, title: { display: true, text: "가입자 수" } }
+          }
+        }
+      });
+    }
+
+    function applyFilter() {
+      const dateFilter = document.getElementById("filterDate").value;
+      const typeFilter = document.getElementById("filterType").value;
+      const filtered = originalRows.filter(row => {
+        const rowDate = new Date(row[2]);
+        const rowType = row[1].trim();
+        const isDateOk = !dateFilter || rowDate >= new Date(dateFilter);
+        const isTypeOk = !typeFilter || rowType === typeFilter;
+        return isDateOk && isTypeOk;
+      });
+      location.reload(); // 실제 필터 적용은 차트 재구성이 필요하므로, 다음 단계 확장
+    }
 
     fetch(sheetURL)
       .then(res => res.text())
       .then(csv => {
         const lines = csv.trim().split("\n");
-        const rows = lines.slice(1).map(line => line.split(","));
-        const total = rows.length;
-        const paid = rows.filter(row => row[1].trim() === "paid").length;
-        const free = total - paid;
-
-        document.getElementById("summaryText").innerHTML = `
-          총 가입자 수: <strong>${total}</strong><br>
-          유료회원: <strong>${paid}</strong>명<br>
-          무료회원: <strong>${free}</strong>명<br>
-          유료회원 비율: <strong>${((paid / total) * 100).toFixed(1)}%</strong>
-        `;
-
-        // 회원 등급 차트
-        const memberCtx = document.getElementById("memberChart").getContext("2d");
-        new Chart(memberCtx, {
-          type: "doughnut",
-          data: {
-            labels: ["무료회원", "유료회원"],
-            datasets: [{
-              data: [free, paid],
-              backgroundColor: ["#90caf9", "#42a5f5"]
-            }]
-          },
-          options: {
-            plugins: { legend: { position: "bottom" } }
-          }
-        });
-
-        // 날짜별 가입자 수 계산
-        const dateCounts = {};
-        rows.forEach(row => {
-          const rawDate = new Date(row[2]);
-          const dateStr = rawDate.toISOString().split("T")[0]; // YYYY-MM-DD
-          if (!dateCounts[dateStr]) dateCounts[dateStr] = 0;
-          dateCounts[dateStr]++;
-        });
-
-        const dailyLabels = Object.keys(dateCounts).sort();
-        const dailyData = dailyLabels.map(date => dateCounts[date]);
-
-        const dailyCtx = document.getElementById("dailyChart").getContext("2d");
-        new Chart(dailyCtx, {
-          type: "bar",
-          data: {
-            labels: dailyLabels,
-            datasets: [{
-              label: "일별 가입자 수",
-              data: dailyData,
-              backgroundColor: "#4caf50"
-            }]
-          },
-          options: {
-            plugins: { legend: { display: false } },
-            scales: {
-              x: { title: { display: true, text: "날짜" } },
-              y: { beginAtZero: true, title: { display: true, text: "가입자 수" } }
-            }
-          }
-        });
+        originalRows = lines.slice(1).map(line => line.split(","));
+        parseAndDisplay(originalRows);
       })
       .catch(err => {
         document.getElementById("summaryText").innerText = "데이터 불러오기 실패";
