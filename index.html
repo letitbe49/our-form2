@@ -144,7 +144,7 @@
   <script>
     function logout() {
       localStorage.removeItem("userEmail");
-      alert("로그아웃 되었습니다.");
+      alert("로그아웃 되었습니다(Logged out)");
       window.location.reload();
     }
 
@@ -155,11 +155,11 @@
     const loginBtn = document.getElementById("loginBtn");
 
     if (email) {
-      welcomeText.textContent = email + "님, 환영합니다!";
+      welcomeText.textContent = email + "님, 환영합니다!(welcome!)";
       logoutBtn.style.display = "inline-block";
       loginBtn.style.display = "none";
     } else {
-      welcomeText.textContent = "로그인하지 않았습니다.";
+      welcomeText.textContent = "로그인 되지 않았습니다(Not Logged in)";
       loginBtn.style.display = "inline-block";
     }
   </script>
