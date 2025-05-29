@@ -67,6 +67,16 @@
       if (email) {
         localStorage.setItem("userEmail", email);
         localStorage.setItem("memberType", memberType);
+
+        // Google Sheets에 정보 저장
+        fetch("https://script.google.com/macros/s/AKfycbwNFxYgmwaHp-LQY6K-Os5VXSMBQ500dTzzdGPDKC_tD9H89J_gfxCzpNJiTB50-2r_0A/exec", {
+          method: "POST",
+          body: new URLSearchParams({
+            email: email,
+            memberType: memberType
+          })
+        });
+
         alert("로그인 완료! (" + memberType + ")");
         window.location.href = "index.html";
       } else {
