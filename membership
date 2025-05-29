@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>유료회원 안내</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      margin: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background: #3366cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #254a99;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>유료회원 안내</h1>
+    <p>유료회원은 모든 문서 다운로드가 가능합니다.<br>
+       무료회원은 열람만 가능하며 다운로드는 제한됩니다.</p>
+    <p>(지금은 테스트용이며 실제 결제는 없습니다)</p>
+    <button onclick="upgrade()">유료회원 전환 (테스트)</button>
+  </div>
+
+  <script>
+    function upgrade() {
+      localStorage.setItem("memberType", "paid");
+      alert("유료회원으로 전환되었습니다. 감사합니다!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
