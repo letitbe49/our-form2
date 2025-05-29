@@ -19,7 +19,7 @@
       max-width: 360px;
       margin: 0 auto;
       padding: 24px 16px 80px;
-      background-color: rgba(255, 255, 255, 0.5); /* 더 투명하게 조정 */
+      background-color: rgba(255, 255, 255, 0.5);
       border-radius: 12px;
     }
 
@@ -125,7 +125,6 @@
   const jsonName = params.get("json");
   const code = params.get("id");
 
-  // 목록으로 돌아가기 정확하게 처리
   const backHref = jsonName ? `${jsonName}.html` : "index.html";
   document.getElementById("backLink").href = `../subpages/${backHref}`;
 
@@ -160,9 +159,21 @@
           if (file && file !== "nan" && file !== "null" && file.trim() !== "") {
             const link = file.startsWith("http") ? file : `../files/${file}`;
             const a = document.createElement("a");
-            a.href = link;
-            a.target = "_blank";
+            a.href = "#";
             a.innerHTML = `<img src="${icons[type].src}" alt="${icons[type].alt}" />`;
+
+            // 로그인 체크 후 다운로드 또는 로그인 페이지 이동
+            a.addEventListener("click", (e) => {
+              e.preventDefault();
+              const user = localStorage.getItem("userEmail");
+              if (user) {
+                window.open(link, "_blank");
+              } else {
+                alert("다운로드하려면 로그인이 필요합니다.");
+                window.location.href = "../login.html";
+              }
+            });
+
             container.appendChild(a);
           }
         }
