@@ -17,6 +17,32 @@
       color: #333;
     }
 
+    .controls {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    a.download-btn {
+      padding: 10px 16px;
+      background: #3366cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
     table {
       width: 100%;
       max-width: 800px;
@@ -39,7 +65,13 @@
   </style>
 </head>
 <body>
-  <h1>가입자 목록 (Google Sheets에서 실시간 조회)</h1>
+  <h1>가입자 목록 (관리자 전용)</h1>
+
+  <div class="controls">
+    <input type="text" id="searchBox" placeholder="이메일 또는 회원등급 검색" onkeyup="filterTable()" />
+    <a class="download-btn" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv" download>CSV 다운로드</a>
+  </div>
+
   <table>
     <thead>
       <tr>
@@ -54,6 +86,21 @@
   </table>
 
   <script>
+    const password = prompt("관리자 비밀번호를 입력하세요:");
+    if (password !== "1234") {
+      alert("접근이 거부되었습니다.");
+      window.location.href = "index.html";
+    }
+
+    function filterTable() {
+      const input = document.getElementById("searchBox").value.toLowerCase();
+      const rows = document.querySelectorAll("#userTable tr");
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(input) ? "" : "none";
+      });
+    }
+
     const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv";
 
     fetch(sheetURL)
