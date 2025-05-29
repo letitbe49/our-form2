@@ -7,7 +7,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      background-image: url('login_img.jpg');
+      background-size: cover;
+      background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,48 +18,85 @@
     }
 
     .login-container {
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       text-align: center;
       width: 100%;
       max-width: 400px;
     }
 
+    h1 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
     input, select {
-      padding: 10px;
+      padding: 12px;
       width: 100%;
       margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 6px;
       font-size: 16px;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 12px 20px;
       font-size: 16px;
       background-color: #3366cc;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
 
     button:hover {
       background-color: #254a99;
     }
+
+    .login-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .login-keyword {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #888;
+    }
+
+    .login-icon {
+      width: 20px;
+      height: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="login-container">
-    <h2>로그인</h2>
+    <div class="login-description">간단한 회원가입만으로 모든 서식이 무료 다운로드</div>
+    <h2>이메일 로그인(e-mail Login)</h2>
     <input id="email" type="email" placeholder="이메일 입력" />
     <select id="memberType">
       <option value="free">무료 회원</option>
       <option value="paid">유료 회원</option>
     </select>
-    <button onclick="login()">로그인</button>
+    <button onclick="login()">
+      <img src="keywords.png" alt="login icon" class="login-icon" />
+      로그인
+    </button>
+    <div class="login-keyword">keywords 아이콘</div>
   </div>
 
   <script>
