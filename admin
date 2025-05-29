@@ -87,7 +87,7 @@
 
   <script>
     const password = prompt("관리자 비밀번호를 입력하세요:");
-    if (password !== "1234") {
+    if (password !== "5414087") {
       alert("접근이 거부되었습니다.");
       window.location.href = "index.html";
     }
