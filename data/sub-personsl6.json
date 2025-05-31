@@ -1,32 +1,32 @@
 [
   {
     "code": "9-1",
-    "title": "9-1.가계부 양식.xlsx",
+    "title": "가계부 양식",
     "category": "생활문서",
     "description": "가계부 일반 양식(1)",
-    "pdf": "https://drive.google.com/uc?id=1T1SrwdaanWEpmLg1Ds0dOCEYYcl1yDIg",
+    "pdf": "https://raw.githubusercontent.com/letitbe49/our-form2/main/downloads/personal6.9-1.가계부양식.pdf.pdf",
     "hwp": "nan",
     "doc": "nan",
-    "xls": "https://drive.google.com/uc?id=1bA1oj-aLVSoFETe5a4vnAvqJ9d_HUHjK"
+    "xls": "https://raw.githubusercontent.com/letitbe49/our-form2/main/downloads/personal6.9-1.가계부양식.xlsx"
   },
   {
     "code": "9-2",
-    "title": "9-2.가계부 양식(2).xlsx",
+    "title": "가계부 양식(2)",
     "category": "생활문서",
     "description": "가계부 일반 양식(2)",
-    "pdf": "https://drive.google.com/uc?id=12hc8ksEzuIGHGnsTZjzCmc3IoHuf0YA3",
+    "pdf": "https://raw.githubusercontent.com/letitbe49/our-form2/main/downloads/personal6.9-2.가계부양식(2).pdf.pdf",
     "hwp": "nan",
     "doc": "nan",
-    "xls": "https://drive.google.com/uc?id=1JaVArIa5cEcQIOuQzhVfInavzBaO-5om"
+    "xls": "https://raw.githubusercontent.com/letitbe49/our-form2/main/downloads/personal6.9-2.가계부양식(2).xlsx"
   },
   {
     "code": "9-3",
-    "title": "9-3.독서 일지.docx",
+    "title": "독서 일지",
     "category": "생활문서",
     "description": "독서 후 작성하는 일지 양식",
-    "pdf": "https://drive.google.com/uc?id=1HgMLINDNxqX6euNePmPc8twcXu1zOQnk",
+    "pdf": "https://raw.githubusercontent.com/letitbe49/our-form2/main/downloads/personal6.9-3.독서일지.pdf.pdf",
     "hwp": "nan",
-    "doc": "https://drive.google.com/uc?id=10dUMhFFl-RqFNm6Ds13GCEpxpdjk9U8I",
+    "doc": "https://raw.githubusercontent.com/letitbe49/our-form2/main/downloads/personal6.9-3.독서일지.docx",
     "xls": "nan"
   }
 ]
