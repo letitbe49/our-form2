@@ -99,21 +99,6 @@
         width: 80px;
       }
     }
-  
-    .back-box {
-      text-align: center;
-      font-size: 14px;
-      color: #000;
-      margin-top: 24px;
-      background-color: rgba(255, 255, 255, 0.3);
-      padding: 8px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
   </style>
 </head>
 <body>
@@ -129,12 +114,10 @@
       ※ 이 문서는 미리보기를 지원하지 않습니다. 아래 아이콘을 눌러 다운로드하세요.
     </div>
 
-    <div class="back-box" id="backBox">← 이전화면 돌아가기</div>
-
     <div class="section-title">다운로드 링크</div>
     <div class="download-section" id="downloadArea"></div>
 
-    
+    <a class="back-link" id="backLink" href="#">← 목록으로 돌아가기</a>
   </div>
 
 <script>
@@ -143,12 +126,7 @@
   const code = params.get("id");
 
   const backHref = jsonName ? `${jsonName}.html` : "index.html";
-  
-  const backHref = jsonName ? `${jsonName}.html` : "index.html";
-  document.getElementById("backBox").addEventListener("click", () => {
-    window.location.href = `../subpages/${backHref}`;
-  });
-
+  document.getElementById("backLink").href = `../subpages/${backHref}`;
 
   if (!jsonName || !code) {
     document.getElementById("title").textContent = "잘못된 접근입니다.";
