@@ -1,5 +1,5 @@
 
-<!-- 전체 열 포함 + 수정/삭제는 시각만 -->
+<!-- 관리자 문서 목록 (Apps Script API 기반) -->
 <div class="summary" style="margin-top: 40px;">
   <h3>📋 등록된 문서 목록</h3>
   <table border="1" width="100%" id="docTable" style="border-collapse: collapse; text-align: center;">
@@ -24,35 +24,28 @@
 </div>
 
 <script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/1ArWSlu-d2Dhuetegh15BupGz_IG2bPFisEhDje1qowM/gviz/tq?sheet=Sheet1&tqx=out:json&nocache=" + Math.random()";
-
-function safe(r, i) {
-  return r[i] && r[i].v ? r[i].v : "";
-}
+// Apps Script API 주소
+const sheetURL = "https://script.google.com/macros/s/AKfycbxYmYgwmWCIAR5F6gKBJRrfV4lyRd96f8TAY0zk8RJhCBatx4VlHRlHmocnatKAu_gK/exec?action=read";
 
 function loadDocuments() {
   fetch(sheetURL)
-    .then(res => res.text())
+    .then(res => res.json())
     .then(data => {
-      const json = JSON.parse(data.substr(47).slice(0, -2));
-      const rows = json.table.rows;
       const tbody = document.getElementById("docTableBody");
       tbody.innerHTML = "";
-
-      rows.slice(1).forEach((row, i) => {
-        const r = row.c;
+      data.forEach((row, i) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-          <td><input value="${safe(r,0)}" /></td>
-          <td><input value="${safe(r,1)}" /></td>
-          <td><input value="${safe(r,2)}" /></td>
-          <td><input value="${safe(r,3)}" /></td>
-          <td><input value="${safe(r,4)}" /></td>
-          <td><input value="${safe(r,5)}" /></td>
-          <td><input value="${safe(r,6)}" /></td>
-          <td><input value="${safe(r,7)}" /></td>
-          <td><input value="${safe(r,8)}" /></td>
-          <td>${safe(r,9)}</td>
+          <td><input value="${row[0] || ""}" /></td>
+          <td><input value="${row[1] || ""}" /></td>
+          <td><input value="${row[2] || ""}" /></td>
+          <td><input value="${row[3] || ""}" /></td>
+          <td><input value="${row[4] || ""}" /></td>
+          <td><input value="${row[5] || ""}" /></td>
+          <td><input value="${row[6] || ""}" /></td>
+          <td><input value="${row[7] || ""}" /></td>
+          <td><input value="${row[8] || ""}" /></td>
+          <td>${row[9] || ""}</td>
           <td><button onclick="updateRow(${i + 2}, this)">💾</button></td>
           <td><button onclick="deleteRow(${i + 2})">🗑</button></td>
         `;
@@ -62,11 +55,11 @@ function loadDocuments() {
 }
 
 function updateRow(rowIndex, btn) {
-  alert("수정 기능은 이후 Apps Script로 연결 가능합니다.");
+  alert("수정 기능은 이후 Apps Script로 연결 예정입니다.");
 }
 
 function deleteRow(rowIndex) {
-  alert("삭제 기능은 이후 Apps Script로 연결 가능합니다.");
+  alert("삭제 기능은 이후 Apps Script로 연결 예정입니다.");
 }
 
 window.onload = loadDocuments;
