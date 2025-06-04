@@ -207,5 +207,61 @@
         console.error("통계 로딩 오류:", err);
       });
   </script>
+
+<!-- 문서 등록 폼 -->
+<div class="summary">
+  <h3>📄 새 문서 등록</h3>
+  <label>카테고리:
+    <select id="category">
+      <option value="global">Global</option>
+      <option value="public">Public</option>
+      <option value="personal">Personal</option>
+    </select>
+  </label><br/><br/>
+  <label>코드: <input type="text" id="code" placeholder="예: 8-1" /></label><br/><br/>
+  <label>문서명: <input type="text" id="title" placeholder="예: 영문이력서" /></label><br/><br/>
+  <label>PDF 링크: <input type="text" id="pdf" /></label><br/><br/>
+  <label>HWP 링크: <input type="text" id="hwp" /></label><br/><br/>
+  <button onclick="addDocument()">문서 추가</button>
+</div>
+
+
+<script>
+function addDocument() {
+  const category = document.getElementById('category').value;
+  const code = document.getElementById('code').value.trim();
+  const title = document.getElementById('title').value.trim();
+  const pdf = document.getElementById('pdf').value.trim();
+  const hwp = document.getElementById('hwp').value.trim();
+
+  if (!code || !title) {
+    alert("코드와 제목은 필수입니다.");
+    return;
+  }
+
+  const payload = {
+    category,
+    code,
+    title,
+    pdf,
+    hwp
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbxYmYgwmWCIAR5F6gKBJRrfV4lyRd96f8TAY0zk8RJhCBatx4VlHRlHmocnatKAu_gK/exec", {
+    method: "POST",
+    body: JSON.stringify(payload),
+    headers: { "Content-Type": "application/json" }
+  })
+  .then(res => res.text())
+  .then(msg => {
+    alert("✅ 문서가 등록되었습니다!");
+    location.reload();
+  })
+  .catch(err => {
+    alert("❌ 등록 실패: " + err);
+  });
+}
+</script>
+
 </body>
 </html>
