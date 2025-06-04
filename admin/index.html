@@ -1,5 +1,5 @@
 
-<!-- 전체 열 포함 + 수정 가능한 입력 필드 -->
+<!-- 전체 열 포함 + 수정/삭제는 시각만 -->
 <div class="summary" style="margin-top: 40px;">
   <h3>📋 등록된 문서 목록</h3>
   <table border="1" width="100%" id="docTable" style="border-collapse: collapse; text-align: center;">
@@ -62,11 +62,11 @@ function loadDocuments() {
 }
 
 function updateRow(rowIndex, btn) {
-  alert("수정 기능은 다음 단계에서 Apps Script로 연결 가능합니다.");
+  alert("수정 기능은 이후 Apps Script로 연결 가능합니다.");
 }
 
 function deleteRow(rowIndex) {
-  alert("삭제 기능은 다음 단계에서 Apps Script로 연결 가능합니다.");
+  alert("삭제 기능은 이후 Apps Script로 연결 가능합니다.");
 }
 
 window.onload = loadDocuments;
