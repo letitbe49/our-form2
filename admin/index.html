@@ -1,267 +1,61 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>관리자 대시보드</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 40px;
-    }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .summary, .controls, .filter {
-      max-width: 800px;
-      margin: 0 auto 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      font-size: 16px;
-    }
-
-    .controls, .filter {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    input, select {
-      padding: 8px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    button, a.button {
-      background: #3366cc;
-      color: white;
-      padding: 8px 16px;
-      font-size: 14px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    canvas {
-      display: block;
-      max-width: 700px;
-      margin: 40px auto;
-    }
-  </style>
-</head>
-<body>
-  <h1>아워폼 관리자 대시보드</h1>
-
-  <div class="summary" id="summaryText">요약 정보를 불러오는 중...</div>
-
-  <div class="controls">
-    <a class="button" href="admin.html">가입자 목록 보기 →</a>
-    <a class="button" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv" download>CSV 다운로드</a>
-  </div>
-
-  <div class="filter">
-    <label>날짜 기준 필터:
-      <input type="date" id="filterDate" />
-    </label>
-    <label>회원등급:
-      <select id="filterType">
-        <option value="">전체</option>
-        <option value="free">무료</option>
-        <option value="paid">유료</option>
-      </select>
-    </label>
-    <button onclick="applyFilter()">필터 적용</button>
-  </div>
-
-  <canvas id="memberChart"></canvas>
-  <canvas id="dailyChart"></canvas>
-  <canvas id="monthlyChart"></canvas>
-
-  <script>
-    let originalRows = [];
-
-    const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVz9pvzeKZZWw07O69nXYREIfLuW6mNqPHkjr442LWyANa5vz5YwYQp_PnoQNf8CtMY4DmmzUAjhjh/pub?gid=0&single=true&output=csv";
-
-    function parseAndDisplay(rows) {
-      const total = rows.length;
-      const paid = rows.filter(row => row[1].trim() === "paid").length;
-      const free = total - paid;
-
-      document.getElementById("summaryText").innerHTML = `
-        총 가입자 수: <strong>${total}</strong><br>
-        유료회원: <strong>${paid}</strong>명<br>
-        무료회원: <strong>${free}</strong>명<br>
-        유료회원 비율: <strong>${((paid / total) * 100).toFixed(1)}%</strong>
-      `;
-
-      // 등급 도넛 차트
-      const memberCtx = document.getElementById("memberChart").getContext("2d");
-      new Chart(memberCtx, {
-        type: "doughnut",
-        data: {
-          labels: ["무료회원", "유료회원"],
-          datasets: [{
-            data: [free, paid],
-            backgroundColor: ["#90caf9", "#42a5f5"]
-          }]
-        },
-        options: {
-          plugins: { legend: { position: "bottom" } }
-        }
-      });
-
-      // 일별 가입자 바 차트
-      const dateCounts = {};
-      rows.forEach(row => {
-        const rawDate = new Date(row[2]);
-        const dateStr = rawDate.toISOString().split("T")[0];
-        if (!dateCounts[dateStr]) dateCounts[dateStr] = 0;
-        dateCounts[dateStr]++;
-      });
-      const dailyLabels = Object.keys(dateCounts).sort();
-      const dailyData = dailyLabels.map(date => dateCounts[date]);
-      new Chart(document.getElementById("dailyChart").getContext("2d"), {
-        type: "bar",
-        data: {
-          labels: dailyLabels,
-          datasets: [{
-            label: "일별 가입자 수",
-            data: dailyData,
-            backgroundColor: "#4caf50"
-          }]
-        },
-        options: {
-          plugins: { legend: { display: false } },
-          scales: {
-            x: { title: { display: true, text: "날짜" } },
-            y: { beginAtZero: true, title: { display: true, text: "가입자 수" } }
-          }
-        }
-      });
-
-      // 월별 집계 차트
-      const monthCounts = {};
-      rows.forEach(row => {
-        const rawDate = new Date(row[2]);
-        const monthKey = rawDate.getFullYear() + "-" + String(rawDate.getMonth() + 1).padStart(2, "0");
-        if (!monthCounts[monthKey]) monthCounts[monthKey] = 0;
-        monthCounts[monthKey]++;
-      });
-      const monthLabels = Object.keys(monthCounts).sort();
-      const monthData = monthLabels.map(m => monthCounts[m]);
-      new Chart(document.getElementById("monthlyChart").getContext("2d"), {
-        type: "line",
-        data: {
-          labels: monthLabels,
-          datasets: [{
-            label: "월별 가입자 수",
-            data: monthData,
-            borderColor: "#ff9800",
-            backgroundColor: "#ffe0b2",
-            fill: true
-          }]
-        },
-        options: {
-          scales: {
-            x: { title: { display: true, text: "월" } },
-            y: { beginAtZero: true, title: { display: true, text: "가입자 수" } }
-          }
-        }
-      });
-    }
-
-    function applyFilter() {
-      const dateFilter = document.getElementById("filterDate").value;
-      const typeFilter = document.getElementById("filterType").value;
-      const filtered = originalRows.filter(row => {
-        const rowDate = new Date(row[2]);
-        const rowType = row[1].trim();
-        const isDateOk = !dateFilter || rowDate >= new Date(dateFilter);
-        const isTypeOk = !typeFilter || rowType === typeFilter;
-        return isDateOk && isTypeOk;
-      });
-      location.reload(); // 실제 필터 적용은 차트 재구성이 필요하므로, 다음 단계 확장
-    }
-
-    fetch(sheetURL)
-      .then(res => res.text())
-      .then(csv => {
-        const lines = csv.trim().split("\n");
-        originalRows = lines.slice(1).map(line => line.split(","));
-        parseAndDisplay(originalRows);
-      })
-      .catch(err => {
-        document.getElementById("summaryText").innerText = "데이터 불러오기 실패";
-        console.error("통계 로딩 오류:", err);
-      });
-  </script>
-
-<!-- 문서 등록 폼 -->
-<div class="summary">
-  <h3>📄 새 문서 등록</h3>
-  <label>카테고리:
-    <select id="category">
-      <option value="global">Global</option>
-      <option value="public">Public</option>
-      <option value="personal">Personal</option>
-    </select>
-  </label><br/><br/>
-  <label>코드: <input type="text" id="code" placeholder="예: 8-1" /></label><br/><br/>
-  <label>문서명: <input type="text" id="title" placeholder="예: 영문이력서" /></label><br/><br/>
-  <label>PDF 링크: <input type="text" id="pdf" /></label><br/><br/>
-  <label>HWP 링크: <input type="text" id="hwp" /></label><br/><br/>
-  <button onclick="addDocument()">문서 추가</button>
+<!-- 등록된 문서 리스트 테이블 -->
+<div class="summary" style="margin-top: 40px;">
+  <h3>📋 등록된 문서 목록</h3>
+  <table border="1" width="100%" id="docTable" style="border-collapse: collapse; text-align: center;">
+    <thead>
+      <tr style="background-color:#eee;">
+        <th>카테고리</th>
+        <th>코드</th>
+        <th>문서명</th>
+        <th>PDF</th>
+        <th>HWP</th>
+        <th>수정</th>
+        <th>삭제</th>
+      </tr>
+    </thead>
+    <tbody id="docTableBody">
+      <!-- 데이터가 여기에 표시됨 -->
+    </tbody>
+  </table>
 </div>
 
-
 <script>
-function addDocument() {
-  const category = document.getElementById('category').value;
-  const code = document.getElementById('code').value.trim();
-  const title = document.getElementById('title').value.trim();
-  const pdf = document.getElementById('pdf').value.trim();
-  const hwp = document.getElementById('hwp').value.trim();
+const sheetURL = "https://docs.google.com/spreadsheets/d/1ArWSlu-d2Dhuetegh15BupGz_IG2bPFisEhDje1qowM/gviz/tq?tqx=out:json";
 
-  if (!code || !title) {
-    alert("코드와 제목은 필수입니다.");
-    return;
-  }
+function loadDocuments() {
+  fetch(sheetURL)
+    .then(res => res.text())
+    .then(data => {
+      const json = JSON.parse(data.substr(47).slice(0, -2));
+      const rows = json.table.rows;
+      const tbody = document.getElementById("docTableBody");
+      tbody.innerHTML = "";
 
-  const payload = {
-    category,
-    code,
-    title,
-    pdf,
-    hwp
-  };
-
-  fetch("https://script.google.com/macros/s/AKfycbxYmYgwmWCIAR5F6gKBJRrfV4lyRd96f8TAY0zk8RJhCBatx4VlHRlHmocnatKAu_gK/exec", {
-    method: "POST",
-    body: JSON.stringify(payload),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(res => res.text())
-  .then(msg => {
-    alert("✅ 문서가 등록되었습니다!");
-    location.reload();
-  })
-  .catch(err => {
-    alert("❌ 등록 실패: " + err);
-  });
+      rows.slice(1).forEach((row, i) => {
+        const r = row.c;
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${r[0]?.v || ""}</td>
+          <td><input value="${r[2]?.v || ""}" /></td>
+          <td><input value="${r[3]?.v || ""}" /></td>
+          <td><input value="${r[5]?.v || ""}" /></td>
+          <td><input value="${r[6]?.v || ""}" /></td>
+          <td><button onclick="updateRow(${i + 2}, this)">💾</button></td>
+          <td><button onclick="deleteRow(${i + 2})">🗑</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    });
 }
-</script>
 
-</body>
-</html>
+function updateRow(rowIndex, btn) {
+  alert("구글 시트 직접 수정은 API로는 제한됩니다. 나중에 Apps Script 연결 필요!");
+}
+
+function deleteRow(rowIndex) {
+  alert("삭제 기능은 스크립트에서 구현해야 합니다. 현재는 안내만 보여집니다.");
+}
+
+window.onload = loadDocuments;
+</script>
