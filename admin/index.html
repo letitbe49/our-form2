@@ -1,22 +1,25 @@
 
-<!-- 등록된 문서 리스트 테이블 -->
+<!-- 전체 열 포함된 문서 리스트 -->
 <div class="summary" style="margin-top: 40px;">
   <h3>📋 등록된 문서 목록</h3>
   <table border="1" width="100%" id="docTable" style="border-collapse: collapse; text-align: center;">
     <thead>
       <tr style="background-color:#eee;">
         <th>카테고리</th>
+        <th>서브카테고리</th>
         <th>코드</th>
         <th>문서명</th>
+        <th>설명</th>
         <th>PDF</th>
         <th>HWP</th>
+        <th>DOC</th>
+        <th>XLS</th>
+        <th>등록일시</th>
         <th>수정</th>
         <th>삭제</th>
       </tr>
     </thead>
-    <tbody id="docTableBody">
-      <!-- 데이터가 여기에 표시됨 -->
-    </tbody>
+    <tbody id="docTableBody"></tbody>
   </table>
 </div>
 
@@ -37,10 +40,15 @@ function loadDocuments() {
         const tr = document.createElement("tr");
         tr.innerHTML = `
           <td>${r[0]?.v || ""}</td>
+          <td>${r[1]?.v || ""}</td>
           <td><input value="${r[2]?.v || ""}" /></td>
           <td><input value="${r[3]?.v || ""}" /></td>
+          <td><input value="${r[4]?.v || ""}" /></td>
           <td><input value="${r[5]?.v || ""}" /></td>
           <td><input value="${r[6]?.v || ""}" /></td>
+          <td><input value="${r[7]?.v || ""}" /></td>
+          <td><input value="${r[8]?.v || ""}" /></td>
+          <td>${r[9]?.f || r[9]?.v || ""}</td>
           <td><button onclick="updateRow(${i + 2}, this)">💾</button></td>
           <td><button onclick="deleteRow(${i + 2})">🗑</button></td>
         `;
@@ -50,11 +58,11 @@ function loadDocuments() {
 }
 
 function updateRow(rowIndex, btn) {
-  alert("구글 시트 직접 수정은 API로는 제한됩니다. 나중에 Apps Script 연결 필요!");
+  alert("구글 시트 직접 수정은 아직 연결되지 않았습니다.");
 }
 
 function deleteRow(rowIndex) {
-  alert("삭제 기능은 스크립트에서 구현해야 합니다. 현재는 안내만 보여집니다.");
+  alert("삭제 기능은 추후 Apps Script로 연결 예정입니다.");
 }
 
 window.onload = loadDocuments;
