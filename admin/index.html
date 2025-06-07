@@ -1,66 +1,11 @@
-
-<!-- 관리자 문서 목록 (Apps Script API 기반) -->
-<div class="summary" style="margin-top: 40px;">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>📂 아워폼 관리자 페이지</title>
+</head>
+<body>
   <h3>📋 등록된 문서 목록</h3>
-  <table border="1" width="100%" id="docTable" style="border-collapse: collapse; text-align: center;">
-    <thead>
-      <tr style="background-color:#eee;">
-        <th>카테고리</th>
-        <th>서브카테고리</th>
-        <th>코드</th>
-        <th>문서명</th>
-        <th>설명</th>
-        <th>PDF</th>
-        <th>HWP</th>
-        <th>DOC</th>
-        <th>XLS</th>
-        <th>등록일시</th>
-        <th>수정</th>
-        <th>삭제</th>
-      </tr>
-    </thead>
-    <tbody id="docTableBody"></tbody>
-  </table>
-</div>
-
-<script>
-// Apps Script API 주소
-const sheetURL = "https://script.google.com/macros/s/AKfycby55fEVRvPSKeTtGugGSWQC1f9kK_MPMi2U79z_s-kmNaH4SCaGfOyDJ4Jahh5JV8lI/exec";
-
-function loadDocuments() {
-  fetch(sheetURL)
-    .then(res => res.json())
-    .then(data => {
-      const tbody = document.getElementById("docTableBody");
-      tbody.innerHTML = "";
-      data.forEach((row, i) => {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td><input value="${row[0] || ""}" /></td>
-          <td><input value="${row[1] || ""}" /></td>
-          <td><input value="${row[2] || ""}" /></td>
-          <td><input value="${row[3] || ""}" /></td>
-          <td><input value="${row[4] || ""}" /></td>
-          <td><input value="${row[5] || ""}" /></td>
-          <td><input value="${row[6] || ""}" /></td>
-          <td><input value="${row[7] || ""}" /></td>
-          <td><input value="${row[8] || ""}" /></td>
-          <td>${row[9] || ""}</td>
-          <td><button onclick="updateRow(${i + 2}, this)">💾</button></td>
-          <td><button onclick="deleteRow(${i + 2})">🗑</button></td>
-        `;
-        tbody.appendChild(tr);
-      });
-    });
-}
-
-function updateRow(rowIndex, btn) {
-  alert("수정 기능은 이후 Apps Script로 연결 예정입니다.");
-}
-
-function deleteRow(rowIndex) {
-  alert("삭제 기능은 이후 Apps Script로 연결 예정입니다.");
-}
-
-window.onload = loadDocuments;
-</script>
+  <iframe src="https://script.google.com/macros/s/AKfycbxYmYgwmWCIAR5F6gKBJRrfV4lyRd96f8TAY0zk8RJhCBatx4VlHRlHmocnatKAu_gK/exec" width="100%" height="600" style="border:1px solid #ccc;"></iframe>
+</body>
+</html>
