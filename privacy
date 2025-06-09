@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>개인정보처리방침</title>
+</head>
+<body>
+  <h1>아워폼 개인정보처리방침</h1>
+  <p>아워폼은 이메일 기반의 회원가입 및 문서 다운로드 서비스를 제공합니다.</p>
+  <ul>
+    <li>수집 항목: 이메일 주소</li>
+    <li>수집 목적: 로그인 및 사용자 인증</li>
+    <li>보관 위치: Google Sheets (사용자 정보는 외부에 공개되지 않음)</li>
+    <li>보관 기간: 회원 요청 시 즉시 삭제 가능</li>
+    <li>문의: psy99923331@gmail.com</li>
+  </ul>
+  <p>본 방침은 2025년 6월 9일부터 적용됩니다.</p>
+</body>
+</html>
