@@ -65,6 +65,22 @@
       background-color: #254a99;
     }
 
+    .back-button {
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: transparent;
+      color: #333;
+      border: 1px solid #999;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 50%;
+    }
+
+    .back-button:hover {
+      border-color: #666;
+      color: #000;
+    }
+
     .login-description {
       font-size: 16px;
       margin-bottom: 10px;
@@ -96,6 +112,9 @@
       <img src="img/keywords.png" alt="login icon" class="login-icon" />
       회원가입 / 로그인(Login)
     </button>
+    <div style="margin-top: 10px;">
+      <button class="back-button" onclick="history.back()">← 돌아가기</button>
+    </div>
     <div class="login-keyword">Free download after logging in</div>
   </div>
 
